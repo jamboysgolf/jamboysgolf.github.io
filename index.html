@@ -41,6 +41,15 @@ body{background:var(--paper);color:var(--ink);
   line-height:.92;letter-spacing:.02em;text-transform:uppercase;text-wrap:balance}
 .brand .szn{font-family:"Barlow Condensed",sans-serif;font-weight:500;font-size:17px;
   text-transform:uppercase;letter-spacing:.10em;color:var(--muted)}
+.szn-pick{font-family:"Barlow Condensed",sans-serif;font-weight:500;font-size:17px;
+  text-transform:uppercase;letter-spacing:.10em;color:var(--muted);background:transparent;
+  border:1px solid transparent;border-radius:5px;padding:2px 22px 2px 6px;cursor:pointer;
+  appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),
+  linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+  background-position:calc(100% - 12px) 55%,calc(100% - 7px) 55%;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.szn-pick:hover{border-color:var(--line);color:var(--ink-2)}
+.szn-pick:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .strip{display:flex;gap:22px;flex-wrap:wrap}
 .stat{display:flex;flex-direction:column;gap:1px}
 .stat .k{font:600 10px/1 "IBM Plex Sans",sans-serif;text-transform:uppercase;letter-spacing:.11em;color:var(--muted)}
@@ -188,6 +197,21 @@ a.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 .note{font-size:12.5px;color:var(--muted);padding:0 2px}
 .note strong{color:var(--ink-2);font-weight:600}
+.hist-season{border-bottom:1px solid var(--line-soft)}
+.hist-season:last-child{border-bottom:0}
+.hist-head{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;
+  padding:14px 16px;background:var(--surface-2)}
+.hist-head h3{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:19px;
+  text-transform:uppercase;letter-spacing:.05em}
+.hist-sub{font-size:12px;color:var(--muted);margin-top:2px;max-width:64ch}
+.hist-champ{display:flex;align-items:baseline;gap:8px}
+.hist-champ .lbl{font:600 10px/1 "IBM Plex Sans",sans-serif;text-transform:uppercase;
+  letter-spacing:.10em;color:var(--muted)}
+.hist-champ .nm{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:21px;
+  text-transform:uppercase;letter-spacing:.03em}
+.hist-champ .sc{font:600 12px/1 "IBM Plex Mono",monospace;color:var(--accent-ink);
+  background:var(--accent-soft);padding:4px 7px;border-radius:4px}
+.hist-note{font-size:12px;color:var(--muted);padding:9px 16px 0;max-width:78ch}
 .legend{display:flex;flex-wrap:wrap;gap:16px;padding:12px 16px;border-top:1px solid var(--line-soft);
   font-size:11.5px;color:var(--muted);background:var(--surface-2)}
 .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:middle}
@@ -318,13 +342,72 @@ a.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <path fill="#0166B1" d="M10 16.9A6.9 6.9 0 0016.9 10H10z"/>
     <circle cx="10" cy="10" r="6.9" fill="none" stroke="#8E8E8E" stroke-width=".9"/>
   </symbol>
+  <symbol id="ic-amex" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#006FCF"/>
+    <rect x="3.4" y="4.6" width="13.2" height="10.8" fill="none" stroke="#fff" stroke-width="1.7"/></symbol>
+  <symbol id="ic-sentry" viewBox="0 0 20 20">
+    <path fill="#12315C" d="M10 1.4l7.2 2.4v6.1c0 4.2-3 7.4-7.2 8.7-4.2-1.3-7.2-4.5-7.2-8.7V3.8z"/>
+    <path fill="#fff" d="M6.2 9.6l1.6-1.6 1.9 1.9 4.1-4.1 1.6 1.6-5.7 5.7z"/></symbol>
+  <symbol id="ic-pebble" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#BBD9E8"/>
+    <rect x="9.2" y="10" width="1.7" height="7.4" fill="#6B4B2A"/>
+    <path fill="#2E6B4F" d="M10 2.4c3.4 0 6.3 2.1 6.3 4.2 0 .8-.9 1-1.7.7-1-.4-2-.2-2.6.3-.5.4-1.2.4-1.7 0-.8-.6-2-.6-2.9-.1-.7.4-1.6.5-2.2.1-.7-.4-1.5-.7-2-.4-.5.3-.5-.8.3-1.9C4.9 3.6 7.2 2.4 10 2.4z"/></symbol>
+  <symbol id="ic-phx" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#E8D2A6"/>
+    <g fill="#2F7A46"><rect x="8.8" y="4" width="2.6" height="14" rx="1.3"/>
+      <path d="M5.2 8.4c.8 0 1.3.6 1.3 1.4v2.1c0 .6.4 1 1 1h1.1v2.3H7.3c-1.7 0-3.1-1.3-3.1-3V9.8c0-.8.3-1.4 1-1.4z"/>
+      <path d="M14.8 6.9c.7 0 1 .6 1 1.4v3c0 1.7-1.4 3-3.1 3h-1.1v-2.3h1c.6 0 1-.4 1-1V8.3c0-.8.5-1.4 1.2-1.4z"/></g></symbol>
+  <symbol id="ic-genesis" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#1B1B1F"/>
+    <path fill="#C9CDD2" d="M10 6.6l2.1 1.9 6.1-1.1-6 3.6L10 12l-2.2-1L1.8 7.4l6.1 1.1z"/></symbol>
+  <symbol id="ic-cognizant" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#9FD3EA"/>
+    <rect x="9.3" y="9.6" width="1.5" height="8" fill="#7A5230"/>
+    <g fill="#1E7A4C"><ellipse cx="10" cy="8" rx="2.1" ry="1.5"/>
+      <path d="M10 8.6C8.3 6.8 5.6 6 3.4 6.7c1.8-.3 4.4.7 6.1 2.4z"/>
+      <path d="M10 8.6c1.7-1.8 4.4-2.6 6.6-1.9-1.8-.3-4.4.7-6.1 2.4z"/>
+      <path d="M10 8.2C9.3 5.9 7.3 4.2 5 3.9c2 .8 3.6 2.6 4.2 4.7z"/>
+      <path d="M10 8.2c.7-2.3 2.7-4 5-4.3-2 .8-3.6 2.6-4.2 4.7z"/></g></symbol>
+  <symbol id="ic-cadillac" viewBox="0 0 20 20">
+    <path fill="#111" d="M3.1 3h13.8v7.4c0 3.6-2.6 6.2-6.9 8.1-4.3-1.9-6.9-4.5-6.9-8.1z"/>
+    <path fill="#C8102E" d="M4.4 4.3h5.6v5.4H4.4z"/><path fill="#F2C230" d="M10 4.3h5.6v5.4H10z"/>
+    <path fill="#0057A8" d="M4.4 9.7h5.6v4.1c-2.8-.9-5.6-1.4-5.6-4.1z"/>
+    <path fill="#E9EAEC" d="M10 9.7h5.6c0 2.7-2.8 3.2-5.6 4.1z"/></symbol>
+  <symbol id="ic-players" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#1D74B8"/>
+    <ellipse cx="10" cy="11.2" rx="6.1" ry="4.6" fill="#3E9B4F"/>
+    <ellipse cx="10" cy="11.2" rx="6.1" ry="4.6" fill="none" stroke="#E4D3A8" stroke-width="1"/>
+    <circle cx="10" cy="11.2" r="1" fill="#fff"/>
+    <path stroke="#fff" stroke-width=".9" d="M10 10.4V6.2"/>
+    <path fill="#C8102E" d="M10 6.2l2.6.9-2.6.9z"/></symbol>
+  <symbol id="ic-bayhill" viewBox="0 0 20 20">
+    <path fill="#D8262C" d="M10 2.1c4.4 0 8 3.3 8 7 0 .5-.6.6-1 .2-.7-.6-1.7-1-2.7-1-1 0-1.9.4-2.6 1-.3.2-.6.3-.9.2V2.1z"/>
+    <path fill="#F0C020" d="M10 2.1v7.4c-.3.1-.6 0-.9-.2-.7-.6-1.6-1-2.6-1s-2 .4-2.7 1c-.4.4-1 .3-1-.2 0-3.7 3.6-7 7.2-7z"/>
+    <path stroke="#2A6A3E" stroke-width="1.9" stroke-linecap="round" fill="none" d="M10 9.9v5.3a1.9 1.9 0 01-3.8 0"/></symbol>
+  <symbol id="ic-houston" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#12315C"/>
+    <path fill="#fff" d="M10 3.4l1.85 5.7h6l-4.85 3.5 1.85 5.7L10 14.8l-4.85 3.5 1.85-5.7L2.15 9.1h6z"/></symbol>
+  <symbol id="ic-valero" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#1E5C3A"/>
+    <path fill="#7FC7E8" d="M2.6 13.6c3.6-4.6 8.2-7.2 14.8-7.9v3.2c-5.4.6-9.2 2.7-12.2 6.4z"/>
+    <circle cx="14.6" cy="5.4" r="2" fill="#F0C020"/></symbol>
+  <symbol id="ic-masters" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#F2C744"/>
+    <path fill="#14532D" d="M3.4 7.2c1.8-1.1 4-1.6 6.3-1.4 2.4.2 3.8 1 5.6.7l1.3 3.2c-1.6 1.4-3.4 2.2-5.6 2.5-2.6.3-4.6-.3-6.4-1.4z"/>
+    <path stroke="#C8102E" stroke-width="1.1" d="M12.6 5.6v9.6"/>
+    <path fill="#C8102E" d="M12.6 4.2l3.1 1.1-3.1 1.1z"/></symbol>
+  <symbol id="ic-heritage" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#BBD9E8"/>
+    <path fill="#fff" d="M7.9 5.4h4.2l1 11.4H6.9z"/>
+    <g fill="#D8262C"><path d="M7.66 8.2h4.68l.14 1.7H7.52z"/><path d="M7.35 11.6h5.3l.15 1.7H7.2z"/>
+      <path d="M7.05 15h5.9l.13 1.5H6.92z"/></g>
+    <rect x="7.2" y="3.9" width="5.6" height="1.6" rx=".5" fill="#31485C"/>
+    <rect x="8.9" y="1.9" width="2.2" height="2" rx=".7" fill="#F0C020"/></symbol>
+  <symbol id="ic-zurich" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#12315C"/>
+    <path fill="#F0C020" d="M10 2.3c1.5 1.9 2.2 3.7 2 5.4h1.6c1.6 0 2.7 1.1 2.7 2.6 0 1.7-1.4 2.9-3.2 2.7 1-.7 1.3-1.7.9-2.4-.4-.7-1.3-.9-2.2-.6l.1 1.5h-3.8l.1-1.5c-.9-.3-1.8-.1-2.2.6-.4.7-.1 1.7.9 2.4-1.8.2-3.2-1-3.2-2.7 0-1.5 1.1-2.6 2.7-2.6H8c-.2-1.7.5-3.5 2-5.4z"/>
+    <rect x="8.9" y="13.2" width="2.2" height="4.6" rx=".7" fill="#F0C020"/>
+    <rect x="6.9" y="13.9" width="6.2" height="1.4" rx=".5" fill="#F0C020"/></symbol>
+  <symbol id="ic-valspar" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#F4F2ED"/>
+    <rect x="2.6" y="3.4" width="14.8" height="4" rx="1" fill="#D8262C"/>
+    <rect x="2.6" y="8" width="14.8" height="4" rx="1" fill="#2F7A46"/>
+    <rect x="2.6" y="12.6" width="14.8" height="4" rx="1" fill="#1D74B8"/></symbol>
  </defs>
 </svg>
 <div class="shell">
   <header class="mast">
     <div class="brand">
       <h1 id="lg-name">JamBoys</h1>
-      <span class="szn" id="lg-szn"></span>
+      <select class="szn-pick" id="szn-pick" aria-label="Season"></select>
     </div>
     <div class="strip" id="strip"></div>
   </header>
@@ -333,6 +416,7 @@ a.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <button class="tab" role="tab" id="t-stand" aria-selected="true" aria-controls="p-stand">Standings</button>
     <button class="tab" role="tab" id="t-bets"  aria-selected="false" aria-controls="p-bets">Side Bets</button>
     <button class="tab" role="tab" id="t-roster" aria-selected="false" aria-controls="p-roster">Roster &amp; Venmo</button>
+    <button class="tab" role="tab" id="t-hist"  aria-selected="false" aria-controls="p-hist">League History</button>
   </div>
 
   <!-- STANDINGS -->
@@ -380,10 +464,20 @@ a.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <div class="scroll"><table id="rtbl"><thead id="rthead"></thead><tbody id="rtbody"></tbody></table></div>
   </section>
 
+  <!-- LEAGUE HISTORY -->
+  <section class="card" id="p-hist" role="tabpanel" aria-labelledby="t-hist" hidden>
+    <div class="card-head">
+      <div><h2>League History</h2>
+      <p class="hint">Every season the league has played, newest first. Rosters change between
+      halves, so career totals below count only the seasons each man actually entered.</p></div>
+    </div>
+    <div id="hist"></div>
+  </section>
+
   <p class="note" id="footnote"></p>
 </div>
 
-<script id="seed" type="application/json">{"league": {"name": "JamBoys", "season": "2026 \u00b7 2nd Half", "groupmeId": "30905635", "contestCount": 15, "weeklyPrize": 85.8, "seasonPrizes": [643.5, 386.1, 257.4], "dropWorst": 2, "salaryCap": "$60k", "lineupSize": 6}, "contests": [{"n": 1, "date": "2026-05-14", "status": "final", "dates": "May 14 - 17", "event": "PGA Championship", "short": "PGA", "course": "Aronimink Golf Club", "location": "Newtown Square, PA", "champion": "Aaron Rai", "winScore": "271 (-9)", "major": true, "mark": "pga"}, {"n": 2, "date": "2026-05-21", "status": "final", "dates": "May 21 - 24", "event": "THE CJ CUP Byron Nelson", "short": "CJ Cup", "course": "TPC Craig Ranch", "location": "McKinney, TX", "champion": "Wyndham Clark", "winScore": "254 (-30)", "major": false, "mark": "cj"}, {"n": 3, "date": "2026-05-28", "status": "final", "dates": "May 28 - 31", "event": "Charles Schwab Challenge", "short": "Schwab", "course": "Colonial Country Club", "location": "Fort Worth, TX", "champion": "Russell Henley", "winScore": "268 (-12)", "major": false, "mark": "tx"}, {"n": 4, "date": "2026-06-04", "status": "final", "dates": "Jun 4 - 7", "event": "the Memorial Tournament pres. by Workday", "short": "Memorial", "course": "Muirfield Village Golf Club", "location": "Dublin, OH", "champion": "J.T. Poston", "winScore": "276 (-12)", "major": false, "mark": "mem"}, {"n": 5, "date": "2026-06-11", "status": "final", "dates": "Jun 11 - 14", "event": "RBC Canadian Open", "short": "RBC", "course": "TPC Toronto at Osprey Valley (North)", "location": "Caledon, ON", "champion": "Bud Cauley", "winScore": "263 (-17)", "major": false, "mark": "ca"}, {"n": 6, "date": "2026-06-18", "status": "final", "dates": "Jun 18 - 21", "event": "U.S. Open", "short": "US Open", "course": "Shinnecock Hills Golf Club", "location": "Southampton, NY", "champion": "Wyndham Clark", "winScore": "276 (-4)", "major": true, "mark": "us"}, {"n": 7, "date": "2026-06-25", "status": "final", "dates": "Jun 25 - 29", "event": "Travelers Championship", "short": "Travelers", "course": "TPC River Highlands", "location": "Cromwell, CT", "champion": "Viktor Hovland", "winScore": "259 (-21)", "major": false, "mark": "umb"}, {"n": 8, "date": "2026-07-02", "status": "final", "dates": "Jul 2 - 5", "event": "John Deere Classic", "short": "Deere", "course": "TPC Deere Run", "location": "Silvis, IL", "champion": "Chris Gotterup", "winScore": "264 (-20)", "major": false, "mark": "jd"}, {"n": 9, "date": "2026-07-09", "status": "final", "dates": "Jul 9 - 12", "event": "Genesis Scottish Open", "short": "Scottish", "course": "The Renaissance Club", "location": "North Berwick, Scotland", "champion": "Tom Kim", "winScore": "263 (-17)", "major": false, "note": "ISCO Championship ran the same week; league played the Scottish Open.", "mark": "sco"}, {"n": 10, "date": "2026-07-16", "status": "final", "dates": "Jul 16 - 19", "event": "The Open", "short": "Open", "course": "Royal Birkdale GC", "location": "Southport, England", "champion": "Ryan Fox", "winScore": "270 (-10)", "major": true, "note": "Corales Puntacana ran the same week; league played The Open.", "mark": "gb"}, {"n": 11, "date": "2026-07-23", "status": "final", "dates": "Jul 23 - 26", "event": "3M Open", "short": "3M", "course": "TPC Twin Cities", "location": "Blaine, MN", "champion": "Jackson Koivun", "winScore": "259 (-25)", "major": false, "mark": "3m"}, {"n": 12, "date": "2026-07-30", "status": "final", "dates": "Jul 30 - Aug 2", "event": "Rocket Classic", "short": "Rocket", "course": "Detroit Golf Club", "location": "Detroit, MI", "champion": "Michael Thorbjornsen", "winScore": "262 (-18)", "major": false, "mark": "rkt"}, {"n": 13, "date": "2026-08-06", "status": "final", "dates": "Aug 6 - 9", "event": "Wyndham Championship", "short": "Wyndham", "course": "Sedgefield Country Club", "location": "Greensboro, NC", "champion": "Michael Brennan", "winScore": "258 (-22)", "major": false, "mark": "wyn"}, {"n": 14, "date": "2026-08-13", "status": "final", "dates": "Aug 13 - 16", "event": "FedEx St. Jude Championship", "short": "FedEx", "course": "TPC Southwind", "location": "Memphis, TN", "champion": "Scottie Scheffler", "winScore": "263 (-17)", "major": false, "mark": "fdx"}, {"n": 15, "date": "2026-08-20", "status": "final", "dates": "Aug 20 - 23", "event": "BMW Championship", "short": "BMW", "course": "Bellerive Country Club", "location": "St. Louis, MO", "champion": "Wyndham Clark", "winScore": "263 (-17)", "major": false, "mark": "bmw"}], "players": [{"id": "tcl00007", "display": "Thomas Long", "groupmeUserId": "6291333", "identityConfirmed": true, "venmo": "Thomas-Long-3", "scores": [349.5, 737.1, 385.1, 385.5, 381.7, 182.4, 451.0, 492.9, 256.0, 421.6, 379.7, 426.0, 412.2, 424.5, 428.2], "payout": 171.6}, {"id": "bjstout", "display": "Brandon Stout", "groupmeUserId": "3690167", "identityConfirmed": true, "venmo": "Brandon-Stout", "scores": [398.2, 587.4, 357.2, 253.9, 489.6, 237.3, 586.6, 563.5, 416.9, 281.4, 652.2, 347.2, 475.0, 401.2, 414.0], "payout": 85.8}, {"id": "banzaitrey2", "display": "Trey", "groupmeUserId": "5363351", "identityConfirmed": true, "venmo": "Thomas-Crawford", "scores": [343.1, 612.8, 397.1, 334.2, 377.3, 221.5, 582.4, 0, 469.8, 372.8, 408.5, 497.8, 306.7, 404.9, 402.2], "payout": 85.8}, {"id": "hilyeri", "display": "Hilyer Isbell", "groupmeUserId": "49046936", "identityConfirmed": true, "venmo": "Hilyer-Isbell", "scores": [346.4, 525.5, 349.6, 385.9, 377.7, 225.4, 561.5, 506.5, 400.9, 327.3, 567.3, 457.0, 422.6, 388.9, 395.9], "payout": 0}, {"id": "guslido", "display": "Mathis Young", "groupmeUserId": "31824053", "identityConfirmed": true, "venmo": "mathisy", "scores": [264.4, 693.4, 456.8, 245.6, 324.1, 201.0, 519.2, 511.5, 367.4, 261.6, 686.8, 297.2, 491.5, 426.6, 486.2], "payout": 257.4}, {"id": "cilteam6", "display": "Council Y", "groupmeUserId": "3410680", "identityConfirmed": true, "venmo": "Cil-Young", "scores": [240.4, 560.0, 326.4, 334.0, 511.2, 176.0, 0, 484.1, 384.8, 303.7, 0, 455.1, 0, 422.5, 354.8], "payout": 0}, {"id": "acartledge", "display": "Andrew Cartledge", "groupmeUserId": "3182822", "identityConfirmed": true, "venmo": "Andrew-Cartledge", "scores": [215.7, 532.7, 434.1, 306.8, 352.3, 266.2, 641.3, 491.5, 378.2, 305.5, 550.0, 405.8, 394.2, 401.2, 438.7], "payout": 85.8}, {"id": "walshbt", "display": "Ben Walsh", "groupmeUserId": "5581498", "identityConfirmed": true, "venmo": "Ben-Walsh-88", "scores": [206.0, 579.2, 301.3, 464.5, 288.3, 200.7, 560.2, 583.9, 320.9, 295.0, 319.4, 441.3, 419.7, 405.8, 413.7], "payout": 171.6}, {"id": "bc32994", "display": "Blake Cole", "groupmeUserId": "16697001", "identityConfirmed": true, "venmo": "BlakeColeJSU", "scores": [246.0, 643.9, 308.9, 0, 394.7, 325.9, 496.8, 476.3, 444.4, 263.3, 519.8, 473.5, 503.0, 434.8, 465.9], "payout": 85.8}, {"id": "d_schmitt_3", "display": "Dalton", "groupmeUserId": "13497036", "identityConfirmed": true, "venmo": "Dalton-Schmittou", "scores": [222.7, 549.9, 302.4, 0, 554.1, 257.5, 545.2, 490.2, 255.0, 285.5, 0, 311.7, 0, 478.5, 445.6], "payout": 171.6}, {"id": "goodgoodchamp", "display": "Daniel Henderson", "groupmeUserId": "10619908", "identityConfirmed": true, "venmo": "hender04", "scores": [0, 555.0, 251.6, 287.8, 496.9, 202.1, 602.5, 402.6, 350.5, 126.7, 494.4, 447.6, 332.7, 332.9, 462.1], "payout": 0}, {"id": "chadt8", "display": "Chad Tow", "groupmeUserId": "8369541", "identityConfirmed": true, "venmo": "ChadTow", "scores": [242.1, 523.3, 404.5, 0, 308.3, 297.8, 614.4, 557.1, 485.6, 382.0, 431.1, 387.5, 473.0, 388.7, 432.8], "payout": 85.8}, {"id": "rinorman", "display": "Beer-Norman", "groupmeUserId": "4218229", "identityConfirmed": true, "venmo": "Richard-Norman-1", "scores": [270.3, 444.1, 377.1, 0, 342.5, 192.7, 560.7, 0, 399.5, 347.7, 466.1, 423.0, 533.1, 453.3, 373.1], "payout": 85.8}], "sideBets": [{"contest": 1, "amount": 25, "pollId": "1778709969235535", "subject": "$25 side bet for PGA Championship", "closes": 1778798737, "inUserIds": ["13497036", "16697001", "31824053", "3182822", "3690167", "49046936", "5363351", "5581498"]}, {"contest": 2, "amount": 20, "pollId": "1779328135641919", "subject": "$20 side bet for Byron Nelson", "closes": 1779370955, "inUserIds": ["10619908", "13497036", "31824053", "3182822", "3690167", "4218229", "5581498"]}, {"contest": 3, "amount": 20, "pollId": "1779840584868294", "subject": "$20 side bet for this week", "closes": 1779969612, "inUserIds": [], "note": "Poll was posted but nobody voted - no side bet settled this week."}, {"contest": 4, "amount": 20, "pollId": "1780427318120528", "subject": "$20 for the Memorial this week!", "closes": 1780573502, "inUserIds": [], "note": "Poll was posted but nobody voted - no side bet settled this week."}, {"contest": 5, "amount": 20, "pollId": "1781011483010459", "subject": "$20 side bet for RBC Canadian Open", "closes": 1781179215, "inUserIds": [], "note": "Poll was posted but nobody voted - no side bet settled this week."}, {"contest": 6, "amount": 25, "pollId": "1781569081526709", "subject": "$25 side bet for US Open!!", "closes": 1781825457, "inUserIds": [], "note": "Poll was posted but nobody voted - no side bet settled this week."}, {"contest": 7, "amount": 20, "pollId": "1782320900694966", "subject": "$20 side bet for Travelers Championship", "closes": 1782387953, "inUserIds": ["13497036", "3182822", "3690167", "5581498", "8369541"]}, {"contest": 8, "amount": 20, "pollId": "1782959530382501", "subject": "$20 side bet for this week", "closes": 1782993617, "inUserIds": ["3182822", "8369541"]}, {"contest": 9, "amount": 20, "pollId": "1783526890075435", "subject": "$20 side bet for Scottish Open", "closes": 1783577702, "inUserIds": ["3182822", "3690167", "5581498"]}, {"contest": 10, "amount": 25, "pollId": "1783980144038550", "subject": "$25 side bet for The Open!", "closes": 1784190624, "inUserIds": [], "note": "Poll was posted but nobody voted - no side bet settled this week."}, {"contest": 11, "amount": 20, "pollId": "1784726414529845", "subject": "$20 side bet for 3m Open", "closes": 1784811619, "inUserIds": ["3182822", "3690167", "5581498", "8369541"]}, {"contest": 12, "amount": 20, "pollId": "1785246286563477", "subject": "$20 side bet for Rocket Classic", "closes": 1785415530, "inUserIds": ["10619908", "3182822", "3690167", "5581498", "8369541"]}, {"contest": 13, "amount": 20, "pollId": "1785942408947214", "subject": "Like this for $20 side bet this week!", "closes": 1786019431, "inUserIds": ["3182822", "3690167", "8369541"]}, {"contest": 14, "amount": 20, "pollId": "1786581907778693", "subject": "St Jude side bet, $20", "closes": 1786624246, "inUserIds": ["10619908", "13497036", "31824053", "3182822", "3410680", "3690167", "4218229", "5363351", "5581498", "8369541"]}, {"contest": 15, "amount": 25, "pollId": "1786990549589034", "subject": "$25 side bet this week, good luck everyone!", "closes": 1787229909, "inUserIds": ["10619908", "13497036", "31824053", "3182822", "3410680", "3690167", "4218229", "49046936", "5581498", "8369541"]}]}</script>
+<script id="seed" type="application/json">{"activeSeasonId": "2027-h1", "groupmeId": "30905635", "people": {"tcl00007": {"display": "Thomas Long", "groupmeUserId": "6291333", "venmo": "Thomas-Long-3", "confirmed": true}, "bjstout": {"display": "Brandon Stout", "groupmeUserId": "3690167", "venmo": "Brandon-Stout", "confirmed": true}, "banzaitrey2": {"display": "Trey Schenzel", "groupmeUserId": "5363351", "venmo": "Trey-Schenzel", "confirmed": true}, "hilyeri": {"display": "Hilyer Isbell", "groupmeUserId": "49046936", "venmo": "Hilyer-Isbell", "confirmed": true}, "guslido": {"display": "Mathis Young", "groupmeUserId": "31824053", "venmo": "mathisy", "confirmed": true}, "cilteam6": {"display": "Council Y", "groupmeUserId": "3410680", "venmo": "Cil-Young", "confirmed": true}, "acartledge": {"display": "Andrew Cartledge", "groupmeUserId": "3182822", "venmo": "Andrew-Cartledge", "confirmed": true}, "walshbt": {"display": "Ben Walsh", "groupmeUserId": "5581498", "venmo": "Ben-Walsh-88", "confirmed": true}, "bc32994": {"display": "Blake Cole", "groupmeUserId": "16697001", "venmo": "BlakeColeJSU", "confirmed": true}, "d_schmitt_3": {"display": "Dalton", "groupmeUserId": "13497036", "venmo": "Dalton-Schmittou", "confirmed": true}, "goodgoodchamp": {"display": "Daniel Henderson", "groupmeUserId": "10619908", "venmo": "hender04", "confirmed": true}, "chadt8": {"display": "Chad Tow", "groupmeUserId": "8369541", "venmo": "ChadTow", "confirmed": true}, "rinorman": {"display": "Beer-Norman", "groupmeUserId": "4218229", "venmo": "Richard-Norman-1", "confirmed": true}, "crawtator": {"display": "crawtator", "groupmeUserId": null, "venmo": null, "confirmed": false}, "titsmcgeeee": {"display": "titsmcgeeee", "groupmeUserId": null, "venmo": null, "confirmed": false}, "robert_swift": {"display": "robert_swift", "groupmeUserId": null, "venmo": null, "confirmed": false}, "arm1121": {"display": "arm1121", "groupmeUserId": null, "venmo": null, "confirmed": false}, "thomascrawfor-3K806": {"display": "Thomas Crawford", "groupmeUserId": null, "venmo": "Thomas-Crawford", "confirmed": true}}, "seasons": [{"id": "2027-h1", "label": "2027 - 1st Half", "status": "scheduled", "league": {"name": "JamBoys", "contestCount": 16, "weeklyPrize": 0, "seasonPrizes": [0, 0, 0], "dropWorst": 2, "salaryCap": "$60k", "lineupSize": 6, "note": "Prize structure not set. 2026 ran $99 a man into a season pool split 5:3:2; the 2nd half added a weekly pot of the same size."}, "contests": [{"n": 1, "date": "2027-01-21", "dates": "Jan 21 - 24", "event": "The American Express", "short": "AmEx", "course": "Pete Dye Stadium Course", "location": "La Quinta, CA", "major": false, "mark": "amex", "status": "scheduled"}, {"n": 2, "date": "2027-01-28", "dates": "Jan 27 - 30", "event": "The Sentry", "short": "Sentry", "course": "Torrey Pines (South)", "location": "San Diego, CA", "major": false, "mark": "sentry", "status": "scheduled"}, {"n": 3, "date": "2027-02-04", "dates": "Feb 4 - 7", "event": "AT&T Pebble Beach Pro-Am", "short": "Pebble", "course": "Pebble Beach Golf Links", "location": "Pebble Beach, CA", "major": false, "mark": "pebble", "status": "scheduled"}, {"n": 4, "date": "2027-02-11", "dates": "Feb 11 - 14", "event": "WM Phoenix Open", "short": "Phoenix", "course": "TPC Scottsdale (Stadium)", "location": "Scottsdale, AZ", "major": false, "mark": "phx", "status": "scheduled"}, {"n": 5, "date": "2027-02-18", "dates": "Feb 18 - 21", "event": "The Genesis Invitational", "short": "Genesis", "course": "The Riviera Country Club", "location": "Pacific Palisades, CA", "major": false, "mark": "genesis", "status": "scheduled"}, {"n": 6, "date": "2027-02-25", "dates": "Feb 25 - 28", "event": "Cognizant Classic in The Palm Beaches", "short": "Cognizant", "course": "PGA National", "location": "Palm Beach Gardens, FL", "major": false, "mark": "cognizant", "status": "scheduled"}, {"n": 7, "date": "2027-03-04", "dates": "Mar 4 - 7", "event": "Cadillac Championship", "short": "Cadillac", "course": "Trump National Doral", "location": "Miami, FL", "major": false, "mark": "cadillac", "status": "scheduled"}, {"n": 8, "date": "2027-03-11", "dates": "Mar 11 - 14", "event": "THE PLAYERS Championship", "short": "PLAYERS", "course": "TPC Sawgrass", "location": "Ponte Vedra Beach, FL", "major": false, "mark": "players", "status": "scheduled"}, {"n": 9, "date": "2027-03-18", "dates": "Mar 18 - 21", "event": "Arnold Palmer Invitational", "short": "Bay Hill", "course": "Bay Hill Club & Lodge", "location": "Orlando, FL", "major": false, "mark": "bayhill", "status": "scheduled"}, {"n": 10, "date": "2027-03-25", "dates": "Mar 25 - 28", "event": "Texas Children's Houston Open", "short": "Houston", "course": "Memorial Park Golf Course", "location": "Houston, TX", "major": false, "mark": "houston", "status": "scheduled"}, {"n": 11, "date": "2027-04-01", "dates": "Apr 1 - 4", "event": "Valero Texas Open", "short": "Valero", "course": "TPC San Antonio", "location": "San Antonio, TX", "major": false, "mark": "valero", "status": "scheduled"}, {"n": 12, "date": "2027-04-08", "dates": "Apr 8 - 11", "event": "Masters Tournament", "short": "Masters", "course": "Augusta National Golf Club", "location": "Augusta, GA", "major": true, "mark": "masters", "status": "scheduled"}, {"n": 13, "date": "2027-04-15", "dates": "Apr 15 - 18", "event": "RBC Heritage", "short": "Heritage", "course": "Harbour Town Golf Links", "location": "Hilton Head Island, SC", "major": false, "mark": "heritage", "status": "scheduled"}, {"n": 14, "date": "2027-04-22", "dates": "Apr 22 - 25", "event": "Zurich Classic of New Orleans", "short": "Zurich", "course": "TPC Louisiana", "location": "Avondale, LA", "major": false, "mark": "zurich", "status": "scheduled"}, {"n": 15, "date": "2027-04-29", "dates": "Apr 29 - May 2", "event": "THE CJ CUP Byron Nelson", "short": "CJ Cup", "course": "TPC Craig Ranch", "location": "McKinney, TX", "major": false, "mark": "cj", "status": "scheduled"}, {"n": 16, "date": "2027-05-06", "dates": "May 6 - 9", "event": "Valspar Championship", "short": "Valspar", "course": "Innisbrook (Copperhead)", "location": "Palm Harbor, FL", "major": false, "mark": "valspar", "status": "scheduled"}], "players": [{"id": "tcl00007", "payout": 0, "scores": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"id": "bjstout", "payout": 0, "scores": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"id": "banzaitrey2", "payout": 0, "scores": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"id": "hilyeri", "payout": 0, "scores": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"id": "guslido", "payout": 0, "scores": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"id": "cilteam6", "payout": 0, "scores": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"id": "acartledge", "payout": 0, "scores": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"id": "walshbt", "payout": 0, "scores": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"id": "bc32994", "payout": 0, "scores": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"id": "d_schmitt_3", "payout": 0, "scores": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"id": "goodgoodchamp", "payout": 0, "scores": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"id": "chadt8", "payout": 0, "scores": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"id": "rinorman", "payout": 0, "scores": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}], "sideBets": []}, {"id": "2026-h2", "label": "2026 - 2nd Half", "status": "final", "league": {"name": "JamBoys", "contestCount": 15, "weeklyPrize": 85.8, "seasonPrizes": [643.5, 386.1, 257.4], "dropWorst": 2, "salaryCap": "$60k", "lineupSize": 6}, "contests": [{"n": 1, "date": "2026-05-14", "status": "final", "dates": "May 14 - 17", "event": "PGA Championship", "short": "PGA", "course": "Aronimink Golf Club", "location": "Newtown Square, PA", "champion": "Aaron Rai", "winScore": "271 (-9)", "major": true, "mark": "pga"}, {"n": 2, "date": "2026-05-21", "status": "final", "dates": "May 21 - 24", "event": "THE CJ CUP Byron Nelson", "short": "CJ Cup", "course": "TPC Craig Ranch", "location": "McKinney, TX", "champion": "Wyndham Clark", "winScore": "254 (-30)", "major": false, "mark": "cj"}, {"n": 3, "date": "2026-05-28", "status": "final", "dates": "May 28 - 31", "event": "Charles Schwab Challenge", "short": "Schwab", "course": "Colonial Country Club", "location": "Fort Worth, TX", "champion": "Russell Henley", "winScore": "268 (-12)", "major": false, "mark": "tx"}, {"n": 4, "date": "2026-06-04", "status": "final", "dates": "Jun 4 - 7", "event": "the Memorial Tournament pres. by Workday", "short": "Memorial", "course": "Muirfield Village Golf Club", "location": "Dublin, OH", "champion": "J.T. Poston", "winScore": "276 (-12)", "major": false, "mark": "mem"}, {"n": 5, "date": "2026-06-11", "status": "final", "dates": "Jun 11 - 14", "event": "RBC Canadian Open", "short": "RBC", "course": "TPC Toronto at Osprey Valley (North)", "location": "Caledon, ON", "champion": "Bud Cauley", "winScore": "263 (-17)", "major": false, "mark": "ca"}, {"n": 6, "date": "2026-06-18", "status": "final", "dates": "Jun 18 - 21", "event": "U.S. Open", "short": "US Open", "course": "Shinnecock Hills Golf Club", "location": "Southampton, NY", "champion": "Wyndham Clark", "winScore": "276 (-4)", "major": true, "mark": "us"}, {"n": 7, "date": "2026-06-25", "status": "final", "dates": "Jun 25 - 29", "event": "Travelers Championship", "short": "Travelers", "course": "TPC River Highlands", "location": "Cromwell, CT", "champion": "Viktor Hovland", "winScore": "259 (-21)", "major": false, "mark": "umb"}, {"n": 8, "date": "2026-07-02", "status": "final", "dates": "Jul 2 - 5", "event": "John Deere Classic", "short": "Deere", "course": "TPC Deere Run", "location": "Silvis, IL", "champion": "Chris Gotterup", "winScore": "264 (-20)", "major": false, "mark": "jd"}, {"n": 9, "date": "2026-07-09", "status": "final", "dates": "Jul 9 - 12", "event": "Genesis Scottish Open", "short": "Scottish", "course": "The Renaissance Club", "location": "North Berwick, Scotland", "champion": "Tom Kim", "winScore": "263 (-17)", "major": false, "note": "ISCO Championship ran the same week; league played the Scottish Open.", "mark": "sco"}, {"n": 10, "date": "2026-07-16", "status": "final", "dates": "Jul 16 - 19", "event": "The Open", "short": "Open", "course": "Royal Birkdale GC", "location": "Southport, England", "champion": "Ryan Fox", "winScore": "270 (-10)", "major": true, "note": "Corales Puntacana ran the same week; league played The Open.", "mark": "gb"}, {"n": 11, "date": "2026-07-23", "status": "final", "dates": "Jul 23 - 26", "event": "3M Open", "short": "3M", "course": "TPC Twin Cities", "location": "Blaine, MN", "champion": "Jackson Koivun", "winScore": "259 (-25)", "major": false, "mark": "3m"}, {"n": 12, "date": "2026-07-30", "status": "final", "dates": "Jul 30 - Aug 2", "event": "Rocket Classic", "short": "Rocket", "course": "Detroit Golf Club", "location": "Detroit, MI", "champion": "Michael Thorbjornsen", "winScore": "262 (-18)", "major": false, "mark": "rkt"}, {"n": 13, "date": "2026-08-06", "status": "final", "dates": "Aug 6 - 9", "event": "Wyndham Championship", "short": "Wyndham", "course": "Sedgefield Country Club", "location": "Greensboro, NC", "champion": "Michael Brennan", "winScore": "258 (-22)", "major": false, "mark": "wyn"}, {"n": 14, "date": "2026-08-13", "status": "final", "dates": "Aug 13 - 16", "event": "FedEx St. Jude Championship", "short": "FedEx", "course": "TPC Southwind", "location": "Memphis, TN", "champion": "Scottie Scheffler", "winScore": "263 (-17)", "major": false, "mark": "fdx"}, {"n": 15, "date": "2026-08-20", "status": "final", "dates": "Aug 20 - 23", "event": "BMW Championship", "short": "BMW", "course": "Bellerive Country Club", "location": "St. Louis, MO", "champion": "Wyndham Clark", "winScore": "263 (-17)", "major": false, "mark": "bmw"}], "players": [{"id": "tcl00007", "payout": 171.6, "scores": [349.5, 737.1, 385.1, 385.5, 381.7, 182.4, 451.0, 492.9, 256.0, 421.6, 379.7, 426.0, 412.2, 424.5, 428.2]}, {"id": "bjstout", "payout": 85.8, "scores": [398.2, 587.4, 357.2, 253.9, 489.6, 237.3, 586.6, 563.5, 416.9, 281.4, 652.2, 347.2, 475.0, 401.2, 414.0]}, {"id": "banzaitrey2", "payout": 85.8, "scores": [343.1, 612.8, 397.1, 334.2, 377.3, 221.5, 582.4, 0, 469.8, 372.8, 408.5, 497.8, 306.7, 404.9, 402.2]}, {"id": "hilyeri", "payout": 0, "scores": [346.4, 525.5, 349.6, 385.9, 377.7, 225.4, 561.5, 506.5, 400.9, 327.3, 567.3, 457.0, 422.6, 388.9, 395.9]}, {"id": "guslido", "payout": 257.4, "scores": [264.4, 693.4, 456.8, 245.6, 324.1, 201.0, 519.2, 511.5, 367.4, 261.6, 686.8, 297.2, 491.5, 426.6, 486.2]}, {"id": "cilteam6", "payout": 0, "scores": [240.4, 560.0, 326.4, 334.0, 511.2, 176.0, 0, 484.1, 384.8, 303.7, 0, 455.1, 0, 422.5, 354.8]}, {"id": "acartledge", "payout": 85.8, "scores": [215.7, 532.7, 434.1, 306.8, 352.3, 266.2, 641.3, 491.5, 378.2, 305.5, 550.0, 405.8, 394.2, 401.2, 438.7]}, {"id": "walshbt", "payout": 171.6, "scores": [206.0, 579.2, 301.3, 464.5, 288.3, 200.7, 560.2, 583.9, 320.9, 295.0, 319.4, 441.3, 419.7, 405.8, 413.7]}, {"id": "bc32994", "payout": 85.8, "scores": [246.0, 643.9, 308.9, 0, 394.7, 325.9, 496.8, 476.3, 444.4, 263.3, 519.8, 473.5, 503.0, 434.8, 465.9]}, {"id": "d_schmitt_3", "payout": 171.6, "scores": [222.7, 549.9, 302.4, 0, 554.1, 257.5, 545.2, 490.2, 255.0, 285.5, 0, 311.7, 0, 478.5, 445.6]}, {"id": "goodgoodchamp", "payout": 0, "scores": [0, 555.0, 251.6, 287.8, 496.9, 202.1, 602.5, 402.6, 350.5, 126.7, 494.4, 447.6, 332.7, 332.9, 462.1]}, {"id": "chadt8", "payout": 85.8, "scores": [242.1, 523.3, 404.5, 0, 308.3, 297.8, 614.4, 557.1, 485.6, 382.0, 431.1, 387.5, 473.0, 388.7, 432.8]}, {"id": "rinorman", "payout": 85.8, "scores": [270.3, 444.1, 377.1, 0, 342.5, 192.7, 560.7, 0, 399.5, 347.7, 466.1, 423.0, 533.1, 453.3, 373.1]}], "sideBets": [{"contest": 1, "amount": 25, "pollId": "1778709969235535", "subject": "$25 side bet for PGA Championship", "closes": 1778798737, "inUserIds": ["13497036", "16697001", "31824053", "3182822", "3690167", "49046936", "5363351", "5581498"]}, {"contest": 2, "amount": 20, "pollId": "1779328135641919", "subject": "$20 side bet for Byron Nelson", "closes": 1779370955, "inUserIds": ["10619908", "13497036", "31824053", "3182822", "3690167", "4218229", "5581498"]}, {"contest": 3, "amount": 20, "pollId": "1779840584868294", "subject": "$20 side bet for this week", "closes": 1779969612, "inUserIds": [], "note": "Poll was posted but nobody voted - no side bet settled this week."}, {"contest": 4, "amount": 20, "pollId": "1780427318120528", "subject": "$20 for the Memorial this week!", "closes": 1780573502, "inUserIds": [], "note": "Poll was posted but nobody voted - no side bet settled this week."}, {"contest": 5, "amount": 20, "pollId": "1781011483010459", "subject": "$20 side bet for RBC Canadian Open", "closes": 1781179215, "inUserIds": [], "note": "Poll was posted but nobody voted - no side bet settled this week."}, {"contest": 6, "amount": 25, "pollId": "1781569081526709", "subject": "$25 side bet for US Open!!", "closes": 1781825457, "inUserIds": [], "note": "Poll was posted but nobody voted - no side bet settled this week."}, {"contest": 7, "amount": 20, "pollId": "1782320900694966", "subject": "$20 side bet for Travelers Championship", "closes": 1782387953, "inUserIds": ["13497036", "3182822", "3690167", "5581498", "8369541"]}, {"contest": 8, "amount": 20, "pollId": "1782959530382501", "subject": "$20 side bet for this week", "closes": 1782993617, "inUserIds": ["3182822", "8369541"]}, {"contest": 9, "amount": 20, "pollId": "1783526890075435", "subject": "$20 side bet for Scottish Open", "closes": 1783577702, "inUserIds": ["3182822", "3690167", "5581498"]}, {"contest": 10, "amount": 25, "pollId": "1783980144038550", "subject": "$25 side bet for The Open!", "closes": 1784190624, "inUserIds": [], "note": "Poll was posted but nobody voted - no side bet settled this week."}, {"contest": 11, "amount": 20, "pollId": "1784726414529845", "subject": "$20 side bet for 3m Open", "closes": 1784811619, "inUserIds": ["3182822", "3690167", "5581498", "8369541"]}, {"contest": 12, "amount": 20, "pollId": "1785246286563477", "subject": "$20 side bet for Rocket Classic", "closes": 1785415530, "inUserIds": ["10619908", "3182822", "3690167", "5581498", "8369541"]}, {"contest": 13, "amount": 20, "pollId": "1785942408947214", "subject": "Like this for $20 side bet this week!", "closes": 1786019431, "inUserIds": ["3182822", "3690167", "8369541"]}, {"contest": 14, "amount": 20, "pollId": "1786581907778693", "subject": "St Jude side bet, $20", "closes": 1786624246, "inUserIds": ["10619908", "13497036", "31824053", "3182822", "3410680", "3690167", "4218229", "5363351", "5581498", "8369541"]}, {"contest": 15, "amount": 25, "pollId": "1786990549589034", "subject": "$25 side bet this week, good luck everyone!", "closes": 1787229909, "inUserIds": ["10619908", "13497036", "31824053", "3182822", "3410680", "3690167", "4218229", "49046936", "5581498", "8369541"]}]}, {"id": "2026-h1", "label": "2026 - 1st Half", "status": "final", "league": {"name": "JamBoys", "contestCount": 16, "weeklyPrize": 105.18, "seasonPrizes": [841.5, 504.9, 336.6], "dropWorst": 2, "salaryCap": "$60k", "lineupSize": 6}, "contests": [{"n": 1, "date": "2026-01-15", "status": "final"}, {"n": 2, "date": "2026-01-22", "status": "final"}, {"n": 3, "date": "2026-01-29", "status": "final"}, {"n": 4, "date": "2026-02-05", "status": "final"}, {"n": 5, "date": "2026-02-12", "status": "final"}, {"n": 6, "date": "2026-02-19", "status": "final"}, {"n": 7, "date": "2026-02-26", "status": "final"}, {"n": 8, "date": "2026-03-05", "status": "final"}, {"n": 9, "date": "2026-03-12", "status": "final"}, {"n": 10, "date": "2026-03-19", "status": "final"}, {"n": 11, "date": "2026-03-26", "status": "final"}, {"n": 12, "date": "2026-04-02", "status": "final"}, {"n": 13, "date": "2026-04-09", "status": "final"}, {"n": 14, "date": "2026-04-16", "status": "final"}, {"n": 15, "date": "2026-04-23", "status": "final"}, {"n": 16, "date": "2026-04-30", "status": "final"}], "players": [{"id": "cilteam6", "payout": 0, "scores": [433.3, 628.6, 489.8, 442.4, 683.6, 505.6, 333.8, 274.9, 493.7, 392.3, 449.8, 425.3, 457.8, 522, 447, 455.3]}, {"id": "banzaitrey2", "payout": 0, "scores": [468.2, 612.7, 383.4, 416.2, 580.7, 407.7, 459.4, 377.6, 361.4, 394.2, 492.9, 525.4, 454.8, 543.7, 423.7, 511.6]}, {"id": "acartledge", "payout": 0, "scores": [472.8, 709.2, 511, 506.6, 638, 577.1, 410.2, 298.8, 314, 286.2, 419.6, 511.9, 354.5, 539.1, 445.8, 392.6]}, {"id": "walshbt", "payout": 0, "scores": [433.4, 661.6, 480.2, 433.3, 606.6, 640.7, 486.6, 274.1, 472.6, 326.5, 427.3, 382.7, 388.6, 569.8, 343.9, 413.1]}, {"id": "goodgoodchamp", "payout": 0, "scores": [447.9, 611.6, 505.4, 496.5, 597.9, 609.2, 426.7, 276, 352.7, 305.4, 365.2, 439.7, 312.5, 465.9, 546.1, 404.2]}, {"id": "rinorman", "payout": 0, "scores": [315.3, 721.3, 507.9, 629.3, 601.4, 403.3, 364.4, 230.7, 377.9, 284.7, 537.2, 408.5, 432.1, 491.6, 406.9, 398.6]}, {"id": "crawtator", "payout": 0, "scores": [433, 676.7, 397, 474.3, 566.5, 505.9, 420.2, 405.1, 250, 278.9, 399.7, 493, 491.5, 448.1, 420.9, 446.4]}, {"id": "bc32994", "payout": 0, "scores": [307.5, 625, 544.8, 457.2, 688.7, 464.6, 461.2, 383.2, 404, 279, 331.7, 432.1, 315.6, 486.9, 468.5, 437.2]}, {"id": "chadt8", "payout": 0, "scores": [307.7, 585.4, 406.6, 428.5, 669.7, 398, 424.5, 382.8, 338.4, 365.2, 541.8, 489.1, 263.3, 509.1, 468, 421.8]}, {"id": "hilyeri", "payout": 0, "scores": [343.6, 619.8, 424.3, 473.3, 582.3, 433.6, 421.6, 285.9, 368.8, 373.8, 450.5, 394.2, 322.4, 496.2, 516.1, 462.1]}, {"id": "bjstout", "payout": 0, "scores": [483.3, 655.6, 306.2, 411.9, 592, 477.6, 413.6, 243, 248.6, 358.2, 344.8, 428.9, 361.2, 419.8, 566.1, 447.5]}, {"id": "d_schmitt_3", "payout": 0, "scores": [398.6, 750.3, 365.2, 438.9, 607.4, 598.2, 431.7, 410.1, 303.8, 341.1, 432.7, 389, 354.4, 440.3, 0, 351.3]}, {"id": "guslido", "payout": 0, "scores": [298, 629.9, 315.9, 476.2, 600.3, 518.3, 375.1, 379.7, 200.6, 306.1, 517.6, 526.3, 331, 0, 552.4, 440]}, {"id": "tcl00007", "payout": 0, "scores": [369.4, 590.7, 382.7, 0, 574.8, 511.9, 366.9, 350.5, 407.1, 284.7, 404.4, 431.5, 425.7, 509.1, 576.4, 0]}, {"id": "titsmcgeeee", "payout": 0, "scores": [416.3, 0, 254, 470.5, 0, 382.1, 0, 0, 400.2, 296.6, 446.3, 404.6, 334.2, 541.1, 439.4, 451.3]}, {"id": "robert_swift", "payout": 0, "scores": [445.9, 634, 0, 473.8, 0, 579.9, 0, 443, 201.4, 313.2, 514.3, 377.3, 0, 0, 0, 0]}, {"id": "arm1121", "payout": 0, "scores": [219.8, 513.6, 261.8, 415.6, 0, 464.7, 458, 482.3, 371.3, 176, 0, 0, 243.4, 0, 0, 0]}], "sideBets": []}]}</script>
 <script>
 /* The Artifact host supplies the <head>, so this file carries none of its own -
    which on GitHub Pages or a local open means no viewport meta, and a phone
@@ -400,7 +494,30 @@ const money  = n => '$' + n.toFixed(2).replace(/\.00$/,'');   // chips, prose
 const money2 = n => '$' + n.toFixed(2);                        // table columns, keeps decimals aligned
 const pts = n => n.toFixed(1);
 
-let D = JSON.parse(document.getElementById('seed').textContent);
+/* RAW holds every season plus one global identity map. D is the season currently
+   on screen, flattened to the old shape (league/contests/players/sideBets) so the
+   renderers below don't care that multiple seasons exist. Rosters differ by
+   season - 17 men played 2026 H1, 13 played H2 - so players are per season and
+   only names/Venmo/GroupMe ids are global. */
+let RAW = JSON.parse(document.getElementById('seed').textContent);
+let D;
+function hydrate(id){
+  const s = RAW.seasons.find(x => x.id === id) || RAW.seasons[0];
+  return {
+    id: s.id, label: s.label, status: s.status,
+    league: s.league, contests: s.contests, sideBets: s.sideBets || [],
+    players: s.players.map(p => {
+      const who = RAW.people[p.id] || {};
+      return Object.assign({}, p, {
+        display: who.display || p.id,
+        groupmeUserId: who.groupmeUserId || null,
+        venmo: who.venmo || null,
+        identityConfirmed: !!who.confirmed
+      });
+    })
+  };
+}
+D = hydrate(RAW.activeSeasonId);
 let MODE = 'all';                       // 'all' | 'drop'
 const N = () => D.league.contestCount;
 const DROP = () => D.league.dropWorst;
@@ -428,17 +545,112 @@ function badge(i){
 /* ---------- masthead ---------- */
 function renderStrip(){
   $('#lg-name').textContent = D.league.name;
-  $('#lg-szn').textContent  = D.league.season;
-  const bet = D.sideBets.reduce((a,b)=>a + Math.max(0, b.amount*(b.inUserIds.length-1)), 0);
-  const st = [
-    ['Contests', N()],
-    ['Weekly prize', money(D.league.weeklyPrize), 'money'],
-    ['Season pool', money(D.league.seasonPrizes.reduce((a,b)=>a+b,0)), 'money'],
-    ['Side-bet volume', money(bet), 'money'],
-  ];
+  const sel = $('#szn-pick');
+  if (!sel.options.length)
+    sel.innerHTML = RAW.seasons.map(s =>
+      `<option value="${s.id}">${s.label}${s.status==='scheduled'?' (upcoming)':''}</option>`).join('');
+  sel.value = D.id;
+
+  const bet  = D.sideBets.reduce((a,b)=>a + Math.max(0, b.amount*(b.inUserIds.length-1)), 0);
+  const pool = D.league.seasonPrizes.reduce((a,b)=>a+b,0);
+  const played = D.contests.filter((c,i)=> D.players.some(p=>p.scores[i]>0)).length;
+  const st = [['Contests', D.status==='scheduled' ? `0 / ${N()}` : N()]];
+  if (D.league.weeklyPrize) st.push(['Weekly prize', money(D.league.weeklyPrize), 'money']);
+  if (pool)                 st.push(['Season pool',  money(pool), 'money']);
+  if (bet)                  st.push(['Side-bet volume', money(bet), 'money']);
+  if (D.status === 'scheduled') st.push(['Starts', D.contests[0].dates || D.contests[0].date]);
   $('#strip').innerHTML = st.map(([k,v,c])=>
     `<div class="stat"><span class="k">${k}</span><span class="v ${c||''}">${v}</span></div>`).join('');
-  $('#lg-prizes').textContent = 'Season prizes: ' + D.league.seasonPrizes.map((p,i)=>`${i+1==1?'1st':i+1==2?'2nd':'3rd'} ${money(p)}`).join(' \u00B7 ');
+  $('#lg-prizes').textContent = D.league.seasonPrizes.some(Boolean)
+    ? 'Season prizes: ' + D.league.seasonPrizes.map((p,i)=>`${i+1==1?'1st':i+1==2?'2nd':'3rd'} ${money(p)}`).join(' \u00B7 ')
+    : 'Prize structure not set yet.';
+}
+
+/* ---------- league history ---------- */
+/* History is shown as played (no drop applied). Weekly money is DERIVED from the
+   scores - who actually topped each contest - rather than read from a stored
+   field, so it can't drift and it works for any season where we know the
+   weekly prize but not who was paid. */
+function seasonTotals(s){
+  const n = s.league.contestCount, wp = s.league.weeklyPrize || 0;
+  const wins = {}; s.players.forEach(p => wins[p.id] = 0);
+  for (let c = 0; c < n; c++){
+    const best = Math.max(...s.players.map(p => p.scores[c] || 0));
+    if (best <= 0) continue;
+    s.players.filter(p => Math.abs((p.scores[c]||0) - best) < .01)
+             .forEach(p => wins[p.id]++);
+  }
+  return s.players.map(p => ({
+    id: p.id,
+    display: (RAW.people[p.id]||{}).display || p.id,
+    total: p.scores.reduce((a,b)=>a+b,0),
+    played: p.scores.filter(x=>x>0).length,
+    wins: wins[p.id],
+    weekly: wins[p.id] * wp
+  })).sort((a,b)=>b.total-a.total);
+}
+function renderHistory(){
+  const done = RAW.seasons.filter(s => s.status !== 'scheduled');
+
+  const cards = done.map(s => {
+    const rows = seasonTotals(s);
+    const prizes = s.league.seasonPrizes;
+    const hasMoney = (s.league.weeklyPrize||0) > 0 || prizes.some(Boolean);
+    const body = rows.map((r,i)=>{
+      const pr = prizes[i] || 0;
+      return `<tr>
+        <td class="l"><div class="rankwrap">${badge(i)}
+          <div><div class="who">${r.display}</div><div class="handle">${r.id}</div></div></div></td>
+        <td class="num">${r.played} / ${s.league.contestCount}</td>
+        <td class="num col-tot">${pts(r.total)}</td>
+        ${hasMoney?`<td class="num ${r.weekly?'paid':'dnp'}"${r.wins?` title="${r.wins} weekly win${r.wins>1?'s':''}"`:''}>${r.weekly?money2(r.weekly):'&mdash;'}</td>
+        <td class="num ${pr?'prize':'dnp'}">${pr?money2(pr):'&mdash;'}</td>`:''}</tr>`;
+    }).join('');
+    const bets = (s.sideBets||[]).filter(b=>b.inUserIds.length>1).length;
+    return `<section class="hist-season">
+      <div class="hist-head">
+        <div><h3>${s.label}</h3>
+          <div class="hist-sub">${s.league.contestCount} contests &middot; ${s.players.length} players${
+            bets?` &middot; ${bets} side bet${bets>1?'s':''}`:''}</div></div>
+        <div class="hist-champ"><span class="lbl">Champion</span>
+          <span class="nm">${rows[0].display}</span>
+          <span class="sc">${pts(rows[0].total)}</span></div>
+      </div>
+      ${s.league.note?`<p class="hist-note">${s.league.note}</p>`:''}
+      <div class="scroll"><table>
+        <thead><tr><th class="l" style="min-width:180px">Player</th><th class="num">Played</th>
+          <th class="num col-tot">Points</th>${hasMoney?'<th class="num">Weekly $</th><th class="num">Season $</th>':''}</tr></thead>
+        <tbody>${body}</tbody></table></div>
+    </section>`;
+  }).join('');
+
+  // career: only the seasons a man actually entered
+  const car = {};
+  done.forEach(s => s.players.forEach(p => {
+    const c = car[p.id] || (car[p.id] = {seasons:0, contests:0, points:0, money:0});
+    c.seasons++; c.contests += p.scores.filter(x=>x>0).length;
+    c.points += p.scores.reduce((a,b)=>a+b,0);
+    const rows = seasonTotals(s), r = rows.findIndex(x=>x.id===p.id);
+    c.money += (rows[r] ? rows[r].weekly : 0) + (s.league.seasonPrizes[r] || 0);
+  }));
+  const carRows = Object.entries(car).sort((a,b)=>b[1].points-a[1].points).map(([id,c],i)=>`
+    <tr><td class="l"><div class="rankwrap"><span class="bn">${i+1}</span>
+      <div><div class="who">${(RAW.people[id]||{}).display||id}</div>
+      <div class="handle">${id}</div></div></div></td>
+      <td class="num">${c.seasons}</td><td class="num">${c.contests}</td>
+      <td class="num col-tot">${pts(c.points)}</td>
+      <td class="num">${(c.points/c.contests).toFixed(1)}</td>
+      <td class="num col-win ${c.money?'paid':'dnp'}">${c.money?money2(c.money):'&mdash;'}</td></tr>`).join('');
+
+  $('#hist').innerHTML = cards + `<section class="hist-season">
+    <div class="hist-head"><div><h3>Career</h3>
+      <div class="hist-sub">Across every season played. Avg is per contest entered, so it
+      compares men who played different numbers of weeks.</div></div></div>
+    <div class="scroll"><table>
+      <thead><tr><th class="l" style="min-width:180px">Player</th><th class="num">Seasons</th>
+        <th class="num">Contests</th><th class="num col-tot">Points</th><th class="num">Avg</th>
+        <th class="num col-win">Won</th></tr></thead>
+      <tbody>${carRows}</tbody></table></div></section>`;
 }
 
 /* ---------- money ----------
@@ -551,7 +763,12 @@ function renderStandings(){
     if (meta && meta.event){
       const SYM = {ca:'fl-ca', us:'fl-us', sco:'fl-sco', gb:'fl-gb', tx:'fl-tx',
                    umb:'ic-umb', pga:'ic-pga', cj:'ic-cj', mem:'ic-mem', jd:'ic-jd',
-                   '3m':'ic-3m', rkt:'ic-rkt', wyn:'ic-wyn', fdx:'ic-fdx', bmw:'ic-bmw'};
+                   '3m':'ic-3m', rkt:'ic-rkt', wyn:'ic-wyn', fdx:'ic-fdx', bmw:'ic-bmw',
+                   amex:'ic-amex', sentry:'ic-sentry', pebble:'ic-pebble', phx:'ic-phx',
+                   genesis:'ic-genesis', cognizant:'ic-cognizant', cadillac:'ic-cadillac',
+                   players:'ic-players', bayhill:'ic-bayhill', houston:'ic-houston',
+                   valero:'ic-valero', masters:'ic-masters', heritage:'ic-heritage',
+                   zurich:'ic-zurich', valspar:'ic-valspar'};
       const sym = SYM[meta.mark];
       sub = `<span class="evt${meta.major?' major':''}">${esc(meta.short||meta.event)}`
           + `${sym?`<svg class="mk ${WIDE.has(meta.mark)?'wide':'sq'}" aria-hidden="true"><use href="#${sym}"/></svg>`:''}</span>`;
@@ -596,7 +813,7 @@ function renderStandings(){
 
     const wkM = M.wk[p.id], sdM = M.side[p.id], snM = M.season[p.id];
     const tot = wkM + sdM + snM;
-    const wins = Math.round(wkM / D.league.weeklyPrize);
+    const wins = D.league.weeklyPrize ? Math.round(wkM / D.league.weeklyPrize) : 0;
     const sdTitle = `Won ${money(M.won[p.id])}, paid out ${money(M.lost[p.id])}`;
     const cell = (v, cls, title) => v === 0
       ? `<td class="num g-pay dnp">&mdash;</td>`
@@ -746,7 +963,7 @@ function renderRoster(){
 }
 
 /* ---------- tabs ---------- */
-const PANELS = [['t-stand','p-stand'],['t-bets','p-bets'],['t-roster','p-roster']];
+const PANELS = [['t-stand','p-stand'],['t-bets','p-bets'],['t-roster','p-roster'],['t-hist','p-hist']];
 PANELS.forEach(([t,p])=>{
   document.getElementById(t).addEventListener('click', ()=>{
     PANELS.forEach(([t2,p2])=>{
@@ -755,6 +972,11 @@ PANELS.forEach(([t,p])=>{
       document.getElementById(p2).hidden = !on;
     });
   });
+});
+$('#szn-pick').addEventListener('change', e => {
+  D = hydrate(e.target.value);
+  SORT = {key:'points', dir:'desc'};      // a new season invalidates a contest-column sort
+  renderAll();
 });
 $('#m-all').addEventListener('click', ()=>setMode('all'));
 $('#m-drop').addEventListener('click',()=>setMode('drop'));
@@ -781,7 +1003,7 @@ function setMode(m){
 }
 
 function renderAll(){
-  renderStrip(); renderStandings(); renderBets(); renderRoster();
+  renderStrip(); renderStandings(); renderBets(); renderRoster(); renderHistory();
   // Defaults: payouts closed. Weekly scores open on desktop, closed on a phone -
   // 15 contest columns on a 390px screen is a scroll bar, not a leaderboard.
   // A stored choice always wins over the width guess.
@@ -795,8 +1017,9 @@ function renderAll(){
   setGroup('pay', pay); setGroup('scores', sc);
   fitColumns();
   const unconf = D.players.filter(p=>!p.identityConfirmed).length;
-  $('#footnote').innerHTML = `Data: <code>data/season.json</code>. `
-    + (unconf ? `<strong>${unconf} players still need their GroupMe&rarr;FanDuel link confirmed</strong> before side-bet winners can be trusted.` : `All identities confirmed.`);
+  $('#footnote').innerHTML = `Data: <code>data/season.json</code>. Showing <strong>${D.label}</strong>. `
+    + (unconf ? `${unconf} player${unconf>1?'s have':' has'} no GroupMe/Venmo on file &mdash; side-bet settlement needs those.`
+              : `All identities confirmed.`);
 }
 renderAll();
 
