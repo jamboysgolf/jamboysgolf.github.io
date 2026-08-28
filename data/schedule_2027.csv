@@ -1,1 +1,1 @@
-with open('schedule_2027.csv').read()
+with open('final_sched.txt').read()
