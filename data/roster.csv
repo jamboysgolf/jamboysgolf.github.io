@@ -1,1 +1,46 @@
-with open('final_roster.txt').read()
+id,display,venmo,groupmeUserId,confirmed
+tcl00007,Thomas Long,Thomas-Long-3,6291333,True
+bjstout,Brandon Stout,Brandon-Stout,3690167,True
+banzaitrey2,Trey Schenzel,Trey-Schenzel,5363351,True
+hilyeri,Hilyer Isbell,Hilyer-Isbell,49046936,True
+guslido,Mathis Young,mathisy,31824053,True
+cilteam6,Council Y,Cil-Young,3410680,True
+acartledge,Andrew Cartledge,Andrew-Cartledge,3182822,True
+walshbt,Ben Walsh,Ben-Walsh-88,5581498,True
+bc32994,Blake Cole,BlakeColeJSU,16697001,True
+d_schmitt_3,Dalton,Dalton-Schmittou,13497036,True
+goodgoodchamp,Daniel Henderson,hender04,10619908,True
+chadt8,Chad Tow,ChadTow,8369541,True
+rinorman,Beer-Norman,Richard-Norman-1,4218229,True
+crawtator,crawtator,,,False
+titsmcgeeee,titsmcgeeee,,,False
+robert_swift,robert_swift,,,False
+arm1121,arm1121,,,False
+thomascrawfor-3K806,Thomas Crawford,Thomas-Crawford,,True
+HilyerIsbell,HilyerIsbell,,,False
+Brandon-10T9KS,Brandon-10T9KS,,,False
+cartledge,cartledge,,,False
+Chad-V8PQ1,Chad-V8PQ1,,,False
+Trey-11BUTG,Trey-11BUTG,,,False
+GusYoung,GusYoung,,,False
+Sam-11BUNK,Sam-11BUNK,,,False
+D_Norman-12VLI8,D_Norman-12VLI8,,,False
+Alverson,Alverson,,,False
+daniel-FM6U3,daniel-FM6U3,,,False
+Joseph-V8PFV,Joseph-V8PFV,,,False
+ralfe-CISLJ,ralfe-CISLJ,,,False
+CMYoung,CMYoung,,,False
+Virgil-168L17,Virgil-168L17,,,False
+ben-1UH3H,ben-1UH3H,,,False
+Frank-R3AOG,Frank-R3AOG,,,False
+nathan-H9J7H,nathan-H9J7H,,,False
+papat-7PMP,papat-7PMP,,,False
+Henry-QGP5L,Henry-QGP5L,,,False
+Robert-PO0OV,Robert-PO0OV,,,False
+jon-13FLT2,jon-13FLT2,,,False
+hamp-6VIP7,hamp-6VIP7,,,False
+bryan-FCRCM,bryan-FCRCM,,,False
+JakeIDGAF,JakeIDGAF,,,False
+Jbud,Jbud,,,False
+JHG1244,JHG1244,,,False
+Will-UL48P,Will-UL48P,,,False
