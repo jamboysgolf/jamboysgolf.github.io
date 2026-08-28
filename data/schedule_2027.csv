@@ -1,1 +1,17 @@
-with open('final_sched.txt').read()
+contestNumber,event,short,mark,major,dates,course,location,purse,previousWinner
+1,The American Express,AmEx,amex,False,Jan 21 - 24,Pete Dye Stadium Course,"La Quinta, CA",,
+2,The Sentry,Sentry,sentry,False,Jan 27 - 30,Torrey Pines (South),"San Diego, CA",,
+3,AT&T Pebble Beach Pro-Am,Pebble,pebble,False,Feb 4 - 7,Pebble Beach Golf Links,"Pebble Beach, CA",,
+4,WM Phoenix Open,WMPO,phx,False,Feb 11 - 14,TPC Scottsdale (Stadium),"Scottsdale, AZ",,
+5,The Genesis Invitational,Genesis,genesis,False,Feb 18 - 21,The Riviera Country Club,"Pacific Palisades, CA",,
+6,Cognizant Classic in The Palm Beaches,Cognizant,cognizant,False,Feb 25 - 28,PGA National,"Palm Beach Gardens, FL",,
+7,Cadillac Championship,Cadillac,cadillac,False,Mar 4 - 7,Trump National Doral,"Miami, FL",,
+8,THE PLAYERS Championship,PLAYERS,players,False,Mar 11 - 14,TPC Sawgrass,"Ponte Vedra Beach, FL",,
+9,Arnold Palmer Invitational,Bay Hill,bayhill,False,Mar 18 - 21,Bay Hill Club & Lodge,"Orlando, FL",,
+10,Texas Children's Houston Open,Houston,houston,False,Mar 25 - 28,Memorial Park Golf Course,"Houston, TX",,
+11,Valero Texas Open,Valero,valero,False,Apr 1 - 4,TPC San Antonio,"San Antonio, TX",,
+12,Masters Tournament,Masters,masters,True,Apr 8 - 11,Augusta National Golf Club,"Augusta, GA",,
+13,RBC Heritage,Heritage,heritage,False,Apr 15 - 18,Harbour Town Golf Links,"Hilton Head Island, SC",,
+14,Zurich Classic of New Orleans,Zurich,zurich,False,Apr 22 - 25,TPC Louisiana,"Avondale, LA",,
+15,THE CJ CUP Byron Nelson,CJ Cup,cj,False,Apr 29 - May 2,TPC Craig Ranch,"McKinney, TX",,
+16,Valspar Championship,Valspar,valspar,False,May 6 - 9,Innisbrook (Copperhead),"Palm Harbor, FL",,
