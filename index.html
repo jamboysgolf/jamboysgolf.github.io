@@ -251,156 +251,338 @@ a.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
  <defs>
-  <!-- 3:2 flags, drawn simply enough to stay readable at 11x7.5px -->
-  <symbol id="fl-ca" viewBox="0 0 30 20">
-    <rect width="30" height="20" fill="#fff"/>
-    <rect width="7.5" height="20" fill="#D52B1E"/><rect x="22.5" width="7.5" height="20" fill="#D52B1E"/>
-    <path fill="#D52B1E" d="M15 4.2l1.5 3 2.3-.6-.7 2.6 2.4-.4-2.6 2.3.5 1.1-2.5-.4.2 3h-1.2l.2-3-2.5.4.5-1.1-2.6-2.3 2.4.4-.7-2.6 2.3.6z"/>
+  <!-- RBC Canadian Open: RBC blue badge with Canadian Red Maple Leaf and golden shield accent -->
+  <symbol id="fl-ca" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#003168"/>
+    <path fill="#DA291C" d="M10 2.8l1.1 2.3 2.1-.5-.7 2.2 2.3.2-2 2 .7 1.1-2.2-.4.4 2.8h-1.4l.4-2.8-2.2.4.7-1.1-2-2 2.3-.2-.7-2.2 2.1.5z"/>
+    <rect x="9.4" y="14.2" width="1.2" height="2.8" fill="#C99700"/>
   </symbol>
-  <symbol id="fl-us" viewBox="0 0 30 20">
-    <rect width="30" height="20" fill="#fff"/>
-    <g fill="#B22234"><rect width="30" height="1.54" y="0"/><rect width="30" height="1.54" y="3.08"/>
-      <rect width="30" height="1.54" y="6.15"/><rect width="30" height="1.54" y="9.23"/>
-      <rect width="30" height="1.54" y="12.31"/><rect width="30" height="1.54" y="15.38"/>
-      <rect width="30" height="1.54" y="18.46"/></g>
-    <rect width="12.5" height="10.77" fill="#3C3B6E"/>
-    <g fill="#fff"><circle cx="3" cy="2.6" r=".9"/><circle cx="7" cy="2.6" r=".9"/><circle cx="11" cy="2.6" r=".9"/>
-      <circle cx="5" cy="5.4" r=".9"/><circle cx="9" cy="5.4" r=".9"/>
-      <circle cx="3" cy="8.2" r=".9"/><circle cx="7" cy="8.2" r=".9"/><circle cx="11" cy="8.2" r=".9"/></g>
+
+  <!-- U.S. Open: The ornate silver U.S. Open Trophy on championship deep navy -->
+  <symbol id="fl-us" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#0A1E3F"/>
+    <!-- Trophy Lid & Finial -->
+    <circle cx="10" cy="3.2" r="0.9" fill="#E2E8F0"/>
+    <path fill="#CBD5E1" d="M8 4.2h4l-.6 1.4H8.6z"/>
+    <!-- Trophy Cup Body -->
+    <path fill="#F8FAFC" d="M7 5.6h6v4.2c0 2-1.3 3.4-3 3.4s-3-1.4-3-3.4V5.6z"/>
+    <!-- Handles -->
+    <path fill="none" stroke="#E2E8F0" stroke-width="1.1" stroke-linecap="round" d="M6.8 6.4C5 6.4 4.4 7.6 4.4 8.8c0 1.6 1.1 2.4 2.4 2.4M13.2 6.4c1.8 0 2.4 1.2 2.4 2.4 0 1.6-1.1 2.4-2.4 2.4"/>
+    <!-- Stem & Pedestal Base -->
+    <rect x="8.8" y="13.2" width="2.4" height="2.2" fill="#94A3B8"/>
+    <rect x="6.4" y="15.4" width="7.2" height="2.2" rx="0.6" fill="#CBD5E1"/>
   </symbol>
-  <symbol id="fl-sco" viewBox="0 0 30 20">
-    <rect width="30" height="20" fill="#0065BD"/>
-    <path stroke="#fff" stroke-width="4.4" d="M0 0l30 20M30 0L0 20"/>
+
+  <!-- Genesis Scottish Open: Scottish Saltire with Highland Thistle / Scottish crest -->
+  <symbol id="fl-sco" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#005EB8"/>
+    <path stroke="#FFFFFF" stroke-width="3.2" d="M0 0l20 20M20 0L0 20"/>
+    <circle cx="10" cy="10" r="4.2" fill="#002D62"/>
+    <circle cx="10" cy="7.8" r="2.2" fill="#8A2BE2"/>
+    <path fill="#2E7D32" d="M7.8 11.2c.8 1.8 3.6 1.8 4.4 0-.6-.8-1.5-1.2-2.2-1.2s-1.6.4-2.2 1.2z"/>
   </symbol>
-  <symbol id="fl-gb" viewBox="0 0 30 20">
-    <rect width="30" height="20" fill="#012169"/>
-    <path stroke="#fff" stroke-width="4" d="M0 0l30 20M30 0L0 20"/>
-    <path stroke="#C8102E" stroke-width="2" d="M0 0l30 20M30 0L0 20"/>
-    <path stroke="#fff" stroke-width="6.6" d="M15 0v20M0 10h30"/>
-    <path stroke="#C8102E" stroke-width="4" d="M15 0v20M0 10h30"/>
+
+  <!-- The Open Championship: The iconic silver Claret Jug on royal navy -->
+  <symbol id="fl-gb" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#05162E"/>
+    <!-- Spout & Lid -->
+    <path fill="#E2E8F0" d="M8.2 3.2h2.6l1.8 1.4-2.2.6H8.2z"/>
+    <circle cx="9.2" cy="2.5" r="0.8" fill="#F8FAFC"/>
+    <!-- Neck -->
+    <path fill="#CBD5E1" d="M8.6 4.8h2.8l-.4 3.6H9z"/>
+    <!-- Jug Body (bulbous vase shape) -->
+    <path fill="#F8FAFC" d="M7.2 8.4h5.6c0 0 1.8 2.2 1.8 4.2 0 1.8-1.4 3.2-4.6 3.2s-4.6-1.4-4.6-3.2c0-2 1.8-4.2 1.8-4.2z"/>
+    <!-- Elegant Curved Handle -->
+    <path fill="none" stroke="#E2E8F0" stroke-width="1.1" stroke-linecap="round" d="M11.4 5.2c2.4.4 3.6 2.2 3.4 4.8-.2 2.2-1.6 3.6-2.6 4"/>
+    <!-- Pedestal Base -->
+    <rect x="7.6" y="15.8" width="4.8" height="1.8" rx="0.5" fill="#94A3B8"/>
   </symbol>
+
+  <!-- Travelers Championship: Crisp red Travelers umbrella with handle -->
   <symbol id="ic-umb" viewBox="0 0 20 20">
-    <path fill="#D6252B" d="M10 1.6c5 0 9.1 3.6 9.1 7.8 0 .5-.6.6-1 .2-.8-.7-1.8-1.1-2.8-1.1s-2 .4-2.8 1.1c-.3.3-.8.3-1.1 0-.8-.7-1.8-1.1-2.8-1.1s-2 .4-2.8 1.1c-.4.4-1 .3-1-.2C.9 5.2 5 1.6 10 1.6z"/>
-    <path stroke="#3E4642" stroke-width="2.1" stroke-linecap="round" fill="none" d="M10 9.6v5.2a2 2 0 01-4 0"/>
+    <rect width="20" height="20" rx="3.5" fill="#FFFFFF"/>
+    <!-- Umbrella Canopy -->
+    <path fill="#D9222A" d="M10 2.2c4.8 0 8.8 3.6 8.8 7.6 0 .5-.5.6-.9.2-.8-.7-1.7-1.1-2.7-1.1s-1.9.4-2.7 1.1c-.3.3-.8.3-1.1 0-.8-.7-1.7-1.1-2.7-1.1s-1.9.4-2.7 1.1c-.4.4-.9.3-.9-.2 0-4 4-7.6 8.9-7.6z"/>
+    <!-- Handle -->
+    <path stroke="#333333" stroke-width="1.8" stroke-linecap="round" fill="none" d="M10 9.8v5.4a1.8 1.8 0 01-3.6 0"/>
   </symbol>
+
+  <!-- PGA Championship: The massive silver Wanamaker Trophy on PGA Blue -->
   <symbol id="ic-pga" viewBox="0 0 20 20">
-    <path fill="#0A2240" d="M6.4 2.2h7.2v1.5H6.4z"/>
-    <path fill="#0A2240" d="M5.6 4.2h8.8v3.1c0 2.7-1.5 4.6-3.5 5v2.4h2.4v1.7H6.7v-1.7h2.4v-2.4c-2-.4-3.5-2.3-3.5-5V4.2z"/>
-    <path fill="none" stroke="#0A2240" stroke-width="1.3" d="M5.3 5.2C3.4 5.2 2.3 6.4 2.3 7.8c0 1.6 1.4 2.6 3 2.6M14.7 5.2c1.9 0 3 1.2 3 2.6 0 1.6-1.4 2.6-3 2.6"/>
-    <rect x="4.6" y="16.5" width="10.8" height="1.6" rx=".5" fill="#0A2240"/>
+    <rect width="20" height="20" rx="3.5" fill="#071D49"/>
+    <!-- Lid & Top Finial -->
+    <circle cx="10" cy="2.2" r="0.8" fill="#F8FAFC"/>
+    <path fill="#CBD5E1" d="M6.8 3h6.4v1.2H6.8z"/>
+    <!-- Trophy Body -->
+    <path fill="#F8FAFC" d="M6 4.2h8v3.4c0 2.8-1.6 4.8-4 5.2v2.2h2.2v1.6H7.8V15h2.2v-2.2c-2.4-.4-4-2.4-4-5.2V4.2z"/>
+    <!-- Large Dual Handles -->
+    <path fill="none" stroke="#CBD5E1" stroke-width="1.3" d="M5.8 4.8C3.6 4.8 2.2 6.2 2.2 8c0 1.9 1.6 3 3.6 3M14.2 4.8c2.2 0 3.6 1.4 3.6 3.2 0 1.9-1.6 3-3.6 3"/>
+    <!-- Square Plinth Base -->
+    <rect x="4.8" y="16.6" width="10.4" height="1.8" rx="0.5" fill="#CBD5E1"/>
   </symbol>
+
+  <!-- THE CJ CUP Byron Nelson: Byron Nelson's fedora silhouette + CJ Tri-color blossom -->
   <symbol id="ic-cj" viewBox="0 0 20 20">
-    <ellipse cx="9.2" cy="5.6" rx="4.1" ry="4.8" transform="rotate(-18 9.2 5.6)" fill="#0A84C8"/>
-    <ellipse cx="14.6" cy="12.4" rx="3.6" ry="4.4" transform="rotate(38 14.6 12.4)" fill="#F59A1E"/>
-    <ellipse cx="7.6" cy="14.6" rx="3.8" ry="4.5" transform="rotate(-8 7.6 14.6)" fill="#E4232C"/>
+    <rect width="20" height="20" rx="3.5" fill="#0B1B3D"/>
+    <!-- CJ Petals -->
+    <ellipse cx="7.2" cy="6.2" rx="3.2" ry="4.2" transform="rotate(-25 7.2 6.2)" fill="#0085CA"/>
+    <ellipse cx="13.2" cy="5.8" rx="3" ry="4" transform="rotate(30 13.2 5.8)" fill="#E02B20"/>
+    <ellipse cx="10" cy="9.8" rx="2.8" ry="3.6" fill="#F39200"/>
+    <!-- Fedora Hat Silhouette -->
+    <path fill="#FFFFFF" d="M4 16.5c2-.5 4-.6 6-.6s4 .1 6 .6c.4.1.2.6-.2.6H4.2c-.4 0-.6-.5-.2-.6z"/>
+    <path fill="#FFFFFF" d="M6.2 15.6c.2-2 1.2-3.8 3.8-3.8 2.4 0 3.4 1.8 3.8 3.8-2.5-.3-5.1-.3-7.6 0z"/>
+    <path fill="#E02B20" d="M6.6 14.8h6.8v.9H6.6z"/>
   </symbol>
-  <symbol id="fl-tx" viewBox="0 0 30 20">
-    <rect width="30" height="20" fill="#fff"/>
-    <rect x="10" y="10" width="20" height="10" fill="#BF0A30"/>
-    <rect width="10" height="20" fill="#002868"/>
-    <path fill="#fff" d="M5 4l1.15 3.54h3.72l-3.01 2.19 1.15 3.54L5 11.08l-3.01 2.19 1.15-3.54L.13 7.54h3.72z"/>
+
+  <!-- Charles Schwab Challenge: Colonial Tartan Plaid + Leonard Trophy silhouette -->
+  <symbol id="fl-tx" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#B31B1B"/>
+    <!-- Colonial Red/Blue/White Scottish Tartan Lines -->
+    <rect x="0" y="5.5" width="20" height="2.2" fill="#0C2340"/>
+    <rect x="0" y="12.5" width="20" height="2.2" fill="#0C2340"/>
+    <rect x="5.5" y="0" width="2.2" height="20" fill="#0C2340"/>
+    <rect x="12.5" y="0" width="2.2" height="20" fill="#0C2340"/>
+    <line x1="0" y1="6.6" x2="20" y2="6.6" stroke="#FFFFFF" stroke-width="0.7"/>
+    <line x1="6.6" y1="0" x2="6.6" y2="20" stroke="#FFFFFF" stroke-width="0.7"/>
+    <!-- Central Shield with Gold Trophy -->
+    <circle cx="10" cy="10" r="4.8" fill="#002D62" stroke="#F5A800" stroke-width="0.8"/>
+    <path fill="#F5A800" d="M8.2 7.2h3.6v2.4c0 1.2-.8 2-1.8 2s-1.8-.8-1.8-2V7.2zm1.2 4.4h1.2v1.8h-1.2zm-1.8 1.8h4.8v1H7.6z"/>
   </symbol>
+
+  <!-- the Memorial Tournament: Nicklaus Golden Bear & Laurel Wreath on Muirfield Green -->
   <symbol id="ic-mem" viewBox="0 0 20 20">
-    <!-- Memorial: the silver trophy inside the laurel wreath, on tournament green -->
-    <rect width="20" height="20" rx="4" fill="#0B4630"/>
-    <g fill="#B9BEC3">
-      <rect x="5.6" y="16.1" width="8.8" height="1.9" rx=".7"/>
-      <rect x="7.2" y="14.4" width="5.6" height="1.8" rx=".6"/>
-      <rect x="9.1" y="11.9" width="1.8" height="2.7"/>
-      <path d="M6.7 6.6h6.6v3.8c0 1.8-1.5 3.2-3.3 3.2s-3.3-1.4-3.3-3.2z"/>
-      <rect x="7.4" y="5" width="5.2" height="1.8" rx=".6"/>
-    </g>
-    <path fill="none" stroke="#B9BEC3" stroke-width="1.1" stroke-linecap="round"
-          d="M9.5 4.9V3.6c0-.8.6-1.4 1.4-1.4s1.3.6 1.3 1.3-.5 1.2-1.2 1.2"/>
+    <rect width="20" height="20" rx="3.5" fill="#063E26"/>
+    <!-- Laurel Wreath -->
+    <path fill="none" stroke="#CBD5E1" stroke-width="1.1" stroke-linecap="round" d="M4.6 14.2c-1.8-3.2-.8-7.4 1.8-9.4M15.4 14.2c1.8-3.2.8-7.4-1.8-9.4"/>
+    <!-- Golden Bear Silhouette -->
+    <path fill="#F5C024" d="M13.2 8.4c-.4-.6-1.1-.9-1.8-.8-.4-.4-1-.5-1.6-.3-.6-.8-1.6-.8-2.3-.2-.5.4-.7 1-.6 1.6-.8.3-1.3 1-1.3 1.8 0 .8.5 1.5 1.2 1.8v1.8c0 .5.4.9.9.9h.8c.4 0 .8-.3.8-.8v-.9h1.6v.9c0 .5.4.8.9.8h.7c.4 0 .8-.4.8-.9v-2.2c1-.4 1.5-1.4 1.5-2.4 0-.6-.5-1.1-1.6-1.1z"/>
   </symbol>
+
+  <!-- John Deere Classic: Official Green & Yellow Leaping Deer Emblem -->
   <symbol id="ic-jd" viewBox="0 0 20 20">
-    <rect width="20" height="20" rx="4.5" fill="#367C2B"/>
-    <rect x="1.6" y="1.6" width="16.8" height="16.8" rx="3.4" fill="none" stroke="#FFDE00" stroke-width="1.2"/>
-    <path fill="#FFDE00" d="M7.7 5.1l.5 1.7 1-.9.1 1.6 1.5.6-1.3 1.3 3.9 1.3 2.1-1.5-.8 2.1 1.3 3.2-2.1-2.4-1.6 2.4H10l1.6-2.6-3.1-1.2-2.7 3.8H3.9l3.2-4.6-1.6-.7 1.5-1 .1-1.6 1 .9z"/>
+    <rect width="20" height="20" rx="4" fill="#367C2B"/>
+    <rect x="1.5" y="1.5" width="17" height="17" rx="3.2" fill="none" stroke="#FFDE00" stroke-width="1.2"/>
+    <!-- Leaping Deer Silhouette -->
+    <path fill="#FFDE00" d="M7.6 4.8l.6 1.8 1-.9.1 1.7 1.6.6-1.4 1.4 4.1 1.4 2.2-1.6-.8 2.2 1.4 3.4-2.2-2.5-1.7 2.5H10l1.7-2.8-3.3-1.3-2.8 4H3.8l3.4-4.8-1.7-.8 1.6-1.1.1-1.7 1.1 1z"/>
   </symbol>
-  <symbol id="ic-3m" viewBox="0 0 30 20">
-    <rect width="30" height="20" rx="2.5" fill="#EE0000"/>
-    <text x="15" y="14.6" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif"
-          font-size="13" font-weight="900" fill="#fff">3M</text>
+
+  <!-- 3M Open: Official Bold Red 3M Block Logo -->
+  <symbol id="ic-3m" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#E8112D"/>
+    <text x="10" y="14.4" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Arial Black,Impact,sans-serif" font-size="11.5" font-weight="900" fill="#FFFFFF" letter-spacing="-0.5">3M</text>
   </symbol>
+
+  <!-- Rocket Mortgage Classic: Bold Rocket Launch 'O' Emblem -->
   <symbol id="ic-rkt" viewBox="0 0 20 20">
-    <path fill="#E03A3E" d="M10 .8A9.2 9.2 0 008.6 19c.5.1.9-.3.9-.8v-6.4a2.7 2.7 0 112.7-2.7c0 .9-.5 1.7-1.2 2.2-.4.3-.5.8-.2 1.2l3.1 3.9c.3.4.9.4 1.2 0A9.2 9.2 0 0010 .8z"/>
+    <rect width="20" height="20" rx="3.5" fill="#FFFFFF"/>
+    <circle cx="10" cy="10" r="8" fill="#E03A3E"/>
+    <circle cx="10" cy="10" r="4.8" fill="#FFFFFF"/>
+    <!-- Rocket Blast Silhouette -->
+    <path fill="#E03A3E" d="M10 5.4c1.1 2.2 1.8 4.4 1.8 6.6H8.2c0-2.2.7-4.4 1.8-6.6z"/>
   </symbol>
+
+  <!-- Wyndham Championship: Wyndham W Signature Swirl on Atlantic Blue -->
   <symbol id="ic-wyn" viewBox="0 0 20 20">
-    <path fill="#1B7FC4" d="M6.6 2.2l9 3.1-9 3.1z"/>
-    <rect x="5.4" y="1.8" width="1.5" height="16.4" rx=".7" fill="#4A4A4A"/>
-    <ellipse cx="10" cy="18.2" rx="6.6" ry="1.3" fill="#1B7FC4" opacity=".35"/>
+    <rect width="20" height="20" rx="3.5" fill="#005A9C"/>
+    <path fill="#FFFFFF" d="M4 6.2h2.2l1.9 6.2 1.8-4.8H12l1.8 4.8 1.9-6.2H18l-2.8 8.6h-2.1L11.2 9.8l-1.9 5H7.2z"/>
+    <path fill="#00A3E0" d="M3.2 15.6c4.2 1.6 9.4 1.6 13.6 0-.8 1.2-4.2 2-6.8 2s-6-.8-6.8-2z"/>
   </symbol>
-  <symbol id="ic-fdx" viewBox="0 0 30 20">
-    <rect width="30" height="20" rx="2.5" fill="#4D148C"/>
-    <path fill="#FF6600" d="M12.8 7.4h7.4V4.1l7 5.9-7 5.9v-3.3h-7.4z"/>
+
+  <!-- FedEx St. Jude Championship: FedEx Orange Arrow / Purple Box with St. Jude Child Cross -->
+  <symbol id="ic-fdx" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#4D148C"/>
+    <!-- St. Jude Child Profile Silhouette in White & Orange -->
+    <path fill="#FF6600" d="M11 5.2h4.5v-2L19 6.8l-3.5 3.6v-2H11z"/>
+    <circle cx="6.5" cy="6.5" r="2.2" fill="#FFFFFF"/>
+    <path fill="#FFFFFF" d="M4.2 15.8c0-2.8 2.2-4.2 4.6-4.2s4.6 1.4 4.6 4.2H4.2z"/>
   </symbol>
+
+  <!-- BMW Championship: Official BMW Roundel -->
   <symbol id="ic-bmw" viewBox="0 0 20 20">
-    <circle cx="10" cy="10" r="9.2" fill="#fff"/>
-    <circle cx="10" cy="10" r="9.2" fill="none" stroke="#8E8E8E" stroke-width="1.6"/>
-    <path fill="#0166B1" d="M10 3.1A6.9 6.9 0 003.1 10H10z"/>
-    <path fill="#0166B1" d="M10 16.9A6.9 6.9 0 0016.9 10H10z"/>
-    <circle cx="10" cy="10" r="6.9" fill="none" stroke="#8E8E8E" stroke-width=".9"/>
+    <circle cx="10" cy="10" r="9.2" fill="#000000"/>
+    <circle cx="10" cy="10" r="9.2" fill="none" stroke="#D1D5DB" stroke-width="1.2"/>
+    <circle cx="10" cy="10" r="6.2" fill="#FFFFFF"/>
+    <path fill="#0066B1" d="M10 3.8A6.2 6.2 0 003.8 10H10z"/>
+    <path fill="#0066B1" d="M10 16.2A6.2 6.2 0 0016.2 10H10z"/>
+    <circle cx="10" cy="10" r="6.2" fill="none" stroke="#D1D5DB" stroke-width="0.8"/>
   </symbol>
-  <symbol id="ic-amex" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#006FCF"/>
-    <rect x="3.4" y="4.6" width="13.2" height="10.8" fill="none" stroke="#fff" stroke-width="1.7"/></symbol>
+
+  <!-- The American Express: Blue Box with Iconic Centurion / Stylized Platinum Frame -->
+  <symbol id="ic-amex" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#006FCF"/>
+    <rect x="2.5" y="4.2" width="15" height="11.6" fill="none" stroke="#FFFFFF" stroke-width="1.4" rx="1.2"/>
+    <text x="10" y="12.2" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Arial,sans-serif" font-size="6.8" font-weight="900" fill="#FFFFFF" letter-spacing="-0.3">AMEX</text>
+  </symbol>
+
+  <!-- The Sentry: Modern Maui Ocean Wave & Sentry Blue Shield -->
   <symbol id="ic-sentry" viewBox="0 0 20 20">
-    <path fill="#12315C" d="M10 1.4l7.2 2.4v6.1c0 4.2-3 7.4-7.2 8.7-4.2-1.3-7.2-4.5-7.2-8.7V3.8z"/>
-    <path fill="#fff" d="M6.2 9.6l1.6-1.6 1.9 1.9 4.1-4.1 1.6 1.6-5.7 5.7z"/></symbol>
-  <symbol id="ic-pebble" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#BBD9E8"/>
-    <rect x="9.2" y="10" width="1.7" height="7.4" fill="#6B4B2A"/>
-    <path fill="#2E6B4F" d="M10 2.4c3.4 0 6.3 2.1 6.3 4.2 0 .8-.9 1-1.7.7-1-.4-2-.2-2.6.3-.5.4-1.2.4-1.7 0-.8-.6-2-.6-2.9-.1-.7.4-1.6.5-2.2.1-.7-.4-1.5-.7-2-.4-.5.3-.5-.8.3-1.9C4.9 3.6 7.2 2.4 10 2.4z"/></symbol>
-  <symbol id="ic-phx" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#E8D2A6"/>
-    <g fill="#2F7A46"><rect x="8.8" y="4" width="2.6" height="14" rx="1.3"/>
-      <path d="M5.2 8.4c.8 0 1.3.6 1.3 1.4v2.1c0 .6.4 1 1 1h1.1v2.3H7.3c-1.7 0-3.1-1.3-3.1-3V9.8c0-.8.3-1.4 1-1.4z"/>
-      <path d="M14.8 6.9c.7 0 1 .6 1 1.4v3c0 1.7-1.4 3-3.1 3h-1.1v-2.3h1c.6 0 1-.4 1-1V8.3c0-.8.5-1.4 1.2-1.4z"/></g></symbol>
-  <symbol id="ic-genesis" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#1B1B1F"/>
-    <path fill="#C9CDD2" d="M10 6.6l2.1 1.9 6.1-1.1-6 3.6L10 12l-2.2-1L1.8 7.4l6.1 1.1z"/></symbol>
-  <symbol id="ic-cognizant" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#9FD3EA"/>
-    <rect x="9.3" y="9.6" width="1.5" height="8" fill="#7A5230"/>
-    <g fill="#1E7A4C"><ellipse cx="10" cy="8" rx="2.1" ry="1.5"/>
-      <path d="M10 8.6C8.3 6.8 5.6 6 3.4 6.7c1.8-.3 4.4.7 6.1 2.4z"/>
-      <path d="M10 8.6c1.7-1.8 4.4-2.6 6.6-1.9-1.8-.3-4.4.7-6.1 2.4z"/>
-      <path d="M10 8.2C9.3 5.9 7.3 4.2 5 3.9c2 .8 3.6 2.6 4.2 4.7z"/>
-      <path d="M10 8.2c.7-2.3 2.7-4 5-4.3-2 .8-3.6 2.6-4.2 4.7z"/></g></symbol>
+    <rect width="20" height="20" rx="3.5" fill="#002D62"/>
+    <!-- Sentry Stylized Wave / Checkmark in Cyan & White -->
+    <path fill="#00A3E0" d="M4 11.2c2.4-3.8 6.4-5.8 11.8-5.8-1.8 2.8-4.4 4.8-8.2 5.8H4z"/>
+    <path fill="#FFFFFF" d="M6.2 14.8c3.2-1.2 5.8-3.4 7.6-6.4 1.4-2.2 2.2-4.2 2.2-4.2-3.8 1.4-6.8 3.8-9.8 10.6z"/>
+  </symbol>
+
+  <!-- AT&T Pebble Beach Pro-Am: The Lone Cypress on Monterey Pacific Cliff -->
+  <symbol id="ic-pebble" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#78B6D8"/>
+    <!-- Ocean & Rocky Cliff -->
+    <path fill="#0B3C5D" d="M0 14c4 .5 8-.5 12 .8 3 .9 5 3.2 8 2.2V20H0z"/>
+    <path fill="#5A4A3A" d="M6 14.2c2-1 5-1.2 7-.2l-.8 4.2H5.2z"/>
+    <!-- Trunk -->
+    <path stroke="#3E2723" stroke-width="1.6" stroke-linecap="round" fill="none" d="M10 14.5c.3-2.8-.8-4.8.4-7.8"/>
+    <path stroke="#3E2723" stroke-width="1.2" stroke-linecap="round" fill="none" d="M9.8 9.5c1.8-.8 3-1.6 3.8-2.6"/>
+    <!-- Windswept Foliage Canopy -->
+    <ellipse cx="10" cy="5.4" rx="3.6" ry="1.8" fill="#1B4D3E"/>
+    <ellipse cx="13.2" cy="6.2" rx="2.6" ry="1.4" fill="#2E6B4F"/>
+    <ellipse cx="7.8" cy="6.8" rx="2.2" ry="1.2" fill="#2E6B4F"/>
+  </symbol>
+
+  <!-- WM Phoenix Open: Saguaro Cactus in Arizona Desert Sunset -->
+  <symbol id="ic-phx" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#ECA136"/>
+    <!-- Desert Sun & Mound -->
+    <circle cx="10" cy="8" r="4.5" fill="#F8DF7B"/>
+    <path fill="#005A36" d="M0 16.5c5-1 12-1 20 0V20H0z"/>
+    <!-- Saguaro Cactus in WM Green -->
+    <rect x="9" y="4" width="2" height="13.5" rx="1" fill="#005A36"/>
+    <path fill="none" stroke="#005A36" stroke-width="1.8" stroke-linecap="round" d="M6.2 8v3.2c0 .8.6 1.4 1.4 1.4H9M13.8 6.8V10c0 .8-.6 1.4-1.4 1.4H11"/>
+  </symbol>
+
+  <!-- The Genesis Invitational: Sleek Chrome Genesis Dual Wings Emblem -->
+  <symbol id="ic-genesis" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#111315"/>
+    <!-- Genesis Wing Crest -->
+    <path fill="#D1D5DB" d="M10 6.4l2.2 2 6.4-1.2-6.2 4L10 12.2l-2.4-1-6.2-4 6.4 1.2z"/>
+    <ellipse cx="10" cy="11.2" rx="1.8" ry="1.2" fill="#9CA3AF"/>
+  </symbol>
+
+  <!-- Cognizant Classic in The Palm Beaches: Tropical Palm Tree & Ocean Blue -->
+  <symbol id="ic-cognizant" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#0033A0"/>
+    <rect x="0" y="15" width="20" height="5" fill="#009A44"/>
+    <!-- Palm Trunk -->
+    <path stroke="#8D5B4C" stroke-width="1.8" stroke-linecap="round" fill="none" d="M10 16c-.5-3.5 1-6.5.2-10"/>
+    <!-- Palm Fronds -->
+    <g fill="#00C48C">
+      <path d="M10.2 6C8.2 4 5 4.5 3 6.2c2.2-.2 5.2.8 6.8 2.4z"/>
+      <path d="M10.2 6c2-2 5.2-1.5 7.2.2-2.2-.2-5.2.8-6.8 2.4z"/>
+      <path d="M10.2 6C9 3.5 6.5 2 4 2c2 1.5 3.8 3.8 4.8 5.6z"/>
+      <path d="M10.2 6c1.2-2.5 3.7-4 6.2-4-2 1.5-3.8 3.8-4.8 5.6z"/>
+    </g>
+  </symbol>
+
+  <!-- Cadillac Championship: Official Cadillac Shield Crest with Iconic Colors -->
   <symbol id="ic-cadillac" viewBox="0 0 20 20">
-    <path fill="#111" d="M3.1 3h13.8v7.4c0 3.6-2.6 6.2-6.9 8.1-4.3-1.9-6.9-4.5-6.9-8.1z"/>
-    <path fill="#C8102E" d="M4.4 4.3h5.6v5.4H4.4z"/><path fill="#F2C230" d="M10 4.3h5.6v5.4H10z"/>
-    <path fill="#0057A8" d="M4.4 9.7h5.6v4.1c-2.8-.9-5.6-1.4-5.6-4.1z"/>
-    <path fill="#E9EAEC" d="M10 9.7h5.6c0 2.7-2.8 3.2-5.6 4.1z"/></symbol>
-  <symbol id="ic-players" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#1D74B8"/>
-    <ellipse cx="10" cy="11.2" rx="6.1" ry="4.6" fill="#3E9B4F"/>
-    <ellipse cx="10" cy="11.2" rx="6.1" ry="4.6" fill="none" stroke="#E4D3A8" stroke-width="1"/>
-    <circle cx="10" cy="11.2" r="1" fill="#fff"/>
-    <path stroke="#fff" stroke-width=".9" d="M10 10.4V6.2"/>
-    <path fill="#C8102E" d="M10 6.2l2.6.9-2.6.9z"/></symbol>
+    <rect width="20" height="20" rx="3.5" fill="#1C1D21"/>
+    <!-- Outer Shield Outline -->
+    <path fill="#A0A5AA" d="M3.2 4.2h13.6v5.8c0 3.8-2.8 6.5-6.8 8.2-4-1.7-6.8-4.4-6.8-8.2V4.2z"/>
+    <!-- Crest Color Blocks -->
+    <path fill="#C8102E" d="M4.6 5.4h5v4.2h-5z"/>
+    <path fill="#F2C230" d="M10.4 5.4h5v4.2h-5z"/>
+    <path fill="#0057A8" d="M4.6 10.2h5v3.2c-2.4-.6-4.6-1.5-5-3.2z"/>
+    <path fill="#FFFFFF" d="M10.4 10.2h5c-.4 1.7-2.6 2.6-5 3.2z"/>
+  </symbol>
+
+  <!-- THE PLAYERS Championship: TPC Sawgrass 17th Island Green & Gold Flag -->
+  <symbol id="ic-players" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#0D5C96"/>
+    <!-- Water Ripples -->
+    <ellipse cx="10" cy="11.8" rx="8.2" ry="5.8" fill="#0077C8"/>
+    <!-- Bulkhead Wood Retaining Wall & Island -->
+    <ellipse cx="10" cy="11.4" rx="6.2" ry="4.4" fill="#8B5A2B"/>
+    <ellipse cx="10" cy="11" rx="5.8" ry="4" fill="#2E8540"/>
+    <!-- Bunker -->
+    <ellipse cx="13.2" cy="12" rx="1.6" ry="1" fill="#E8D7A5"/>
+    <!-- Hole Pin & Gold Flag -->
+    <circle cx="8.8" cy="10.8" r="0.8" fill="#FFFFFF"/>
+    <line x1="8.8" y1="10.8" x2="8.8" y2="4.2" stroke="#FFFFFF" stroke-width="0.9"/>
+    <path fill="#FFD700" d="M8.8 4.2l3.2 1.1-3.2 1.1z"/>
+  </symbol>
+
+  <!-- Arnold Palmer Invitational: Authentic 4-Panel Palmer Umbrella -->
   <symbol id="ic-bayhill" viewBox="0 0 20 20">
-    <path fill="#D8262C" d="M10 2.1c4.4 0 8 3.3 8 7 0 .5-.6.6-1 .2-.7-.6-1.7-1-2.7-1-1 0-1.9.4-2.6 1-.3.2-.6.3-.9.2V2.1z"/>
-    <path fill="#F0C020" d="M10 2.1v7.4c-.3.1-.6 0-.9-.2-.7-.6-1.6-1-2.6-1s-2 .4-2.7 1c-.4.4-1 .3-1-.2 0-3.7 3.6-7 7.2-7z"/>
-    <path stroke="#2A6A3E" stroke-width="1.9" stroke-linecap="round" fill="none" d="M10 9.9v5.3a1.9 1.9 0 01-3.8 0"/></symbol>
-  <symbol id="ic-houston" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#12315C"/>
-    <path fill="#fff" d="M10 3.4l1.85 5.7h6l-4.85 3.5 1.85 5.7L10 14.8l-4.85 3.5 1.85-5.7L2.15 9.1h6z"/></symbol>
-  <symbol id="ic-valero" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#1E5C3A"/>
-    <path fill="#7FC7E8" d="M2.6 13.6c3.6-4.6 8.2-7.2 14.8-7.9v3.2c-5.4.6-9.2 2.7-12.2 6.4z"/>
-    <circle cx="14.6" cy="5.4" r="2" fill="#F0C020"/></symbol>
-  <symbol id="ic-masters" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#F2C744"/>
-    <path fill="#14532D" d="M3.4 7.2c1.8-1.1 4-1.6 6.3-1.4 2.4.2 3.8 1 5.6.7l1.3 3.2c-1.6 1.4-3.4 2.2-5.6 2.5-2.6.3-4.6-.3-6.4-1.4z"/>
-    <path stroke="#C8102E" stroke-width="1.1" d="M12.6 5.6v9.6"/>
-    <path fill="#C8102E" d="M12.6 4.2l3.1 1.1-3.1 1.1z"/></symbol>
-  <symbol id="ic-heritage" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#BBD9E8"/>
-    <path fill="#fff" d="M7.9 5.4h4.2l1 11.4H6.9z"/>
-    <g fill="#D8262C"><path d="M7.66 8.2h4.68l.14 1.7H7.52z"/><path d="M7.35 11.6h5.3l.15 1.7H7.2z"/>
-      <path d="M7.05 15h5.9l.13 1.5H6.92z"/></g>
-    <rect x="7.2" y="3.9" width="5.6" height="1.6" rx=".5" fill="#31485C"/>
-    <rect x="8.9" y="1.9" width="2.2" height="2" rx=".7" fill="#F0C020"/></symbol>
-  <symbol id="ic-zurich" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#12315C"/>
-    <path fill="#F0C020" d="M10 2.3c1.5 1.9 2.2 3.7 2 5.4h1.6c1.6 0 2.7 1.1 2.7 2.6 0 1.7-1.4 2.9-3.2 2.7 1-.7 1.3-1.7.9-2.4-.4-.7-1.3-.9-2.2-.6l.1 1.5h-3.8l.1-1.5c-.9-.3-1.8-.1-2.2.6-.4.7-.1 1.7.9 2.4-1.8.2-3.2-1-3.2-2.7 0-1.5 1.1-2.6 2.7-2.6H8c-.2-1.7.5-3.5 2-5.4z"/>
-    <rect x="8.9" y="13.2" width="2.2" height="4.6" rx=".7" fill="#F0C020"/>
-    <rect x="6.9" y="13.9" width="6.2" height="1.4" rx=".5" fill="#F0C020"/></symbol>
-  <symbol id="ic-valspar" viewBox="0 0 20 20"><rect width="20" height="20" rx="3" fill="#F4F2ED"/>
-    <rect x="2.6" y="3.4" width="14.8" height="4" rx="1" fill="#D8262C"/>
-    <rect x="2.6" y="8" width="14.8" height="4" rx="1" fill="#2F7A46"/>
-    <rect x="2.6" y="12.6" width="14.8" height="4" rx="1" fill="#1D74B8"/></symbol>
+    <rect width="20" height="20" rx="3.5" fill="#FFFFFF"/>
+    <!-- 4 Canopy Segments: Red, White, Yellow, Green -->
+    <!-- Red Left -->
+    <path fill="#DA291C" d="M10 2.2c-4.4 0-7.8 3.2-7.8 6.8 0 .4.4.6.8.2.8-.7 1.6-1 2.6-1 .8 0 1.5.3 2.1.8L10 2.2z"/>
+    <!-- White Left-Center -->
+    <path fill="#E5E7EB" d="M7.7 9c.6-.6 1.4-.9 2.3-.9v-5.9l-2.3 6.8z"/>
+    <!-- Yellow Right-Center -->
+    <path fill="#FFCD00" d="M10 2.2v5.9c.9 0 1.7.3 2.3.9L10 2.2z"/>
+    <!-- Green Right -->
+    <path fill="#00843D" d="M10 2.2l2.3 6.8c.6-.5 1.3-.8 2.1-.8 1 0 1.8.3 2.6 1 .4.4.8.2.8-.2 0-3.6-3.4-6.8-7.8-6.8z"/>
+    <!-- Handle -->
+    <path stroke="#4A3728" stroke-width="1.8" stroke-linecap="round" fill="none" d="M10 8.5v6.5a1.8 1.8 0 01-3.6 0"/>
+  </symbol>
+
+  <!-- Texas Children's Houston Open: Texas Lone Star with Houston Skyline Silhouette -->
+  <symbol id="ic-houston" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#002D62"/>
+    <!-- Lone Star -->
+    <path fill="#BA0C2F" d="M0 13h20v7H0z"/>
+    <circle cx="10" cy="10" r="7.4" fill="#002D62" stroke="#FFFFFF" stroke-width="1"/>
+    <path fill="#FFFFFF" d="M10 4.2l1.4 3.8h4l-3.2 2.4 1.2 3.8-3.4-2.3-3.4 2.3 1.2-3.8-3.2-2.4h4z"/>
+  </symbol>
+
+  <!-- Valero Texas Open: Valero Sunburst Swoosh on Hill Country Green -->
+  <symbol id="ic-valero" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#004831"/>
+    <!-- Valero Teal & Gold Arc / Lone Star Spur -->
+    <path fill="#00A3E0" d="M2.8 14.6C6.2 9.8 11.2 7 17.5 6.2v3.6c-5.2.6-9.2 2.8-12 6.8H2.8z"/>
+    <circle cx="15.2" cy="5.8" r="2.2" fill="#FDB913"/>
+  </symbol>
+
+  <!-- Masters Tournament: Augusta National USA Map with Red Flag & Pin -->
+  <symbol id="ic-masters" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#F4CA38"/>
+    <!-- Continental USA Silhouette in Masters Green -->
+    <path fill="#075C36" d="M3 6.8c1.6-.8 3.6-1.2 5.4-1 2 .2 3.4.8 5 .6 1.4-.2 2.4-.8 3.4-.6l1 2.8c-1.2 1.4-2.8 2-4.6 2.4-2 .4-3.6.2-5.4-.4-1.6 1.4-3.2 2-5 1.6-1-.2-1.8-1-2.4-2-.6-1.2-.2-2.4 2.6-3.4z"/>
+    <!-- Red Flagstick Piercing Augusta, GA -->
+    <line x1="12.8" y1="4.2" x2="12.8" y2="10.8" stroke="#D32F2F" stroke-width="1"/>
+    <path fill="#D32F2F" d="M12.8 4.2l3.4 1.2-3.4 1.2z"/>
+    <circle cx="12.8" cy="10.8" r="0.9" fill="#D32F2F"/>
+  </symbol>
+
+  <!-- RBC Heritage: Harbour Town Lighthouse in Signature Red & White Stripes -->
+  <symbol id="ic-heritage" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#78B6D8"/>
+    <!-- Ocean Wave Base -->
+    <path fill="#002D62" d="M0 16.5c4-.5 8 .5 12 0 3-.4 5-1 8 0V20H0z"/>
+    <!-- Octagonal Lighthouse Tower Body -->
+    <path fill="#FFFFFF" d="M8 5.2h4l1 11.6H7z"/>
+    <!-- Red Bands -->
+    <polygon points="7.8,7.8 12.2,7.8 12.4,9.6 7.6,9.6" fill="#D32F2F"/>
+    <polygon points="7.4,11.4 12.6,11.4 12.8,13.2 7.2,13.2" fill="#D32F2F"/>
+    <polygon points="7.1,15 12.9,15 13,16.8 7,16.8" fill="#D32F2F"/>
+    <!-- Lantern Room & Top Dome -->
+    <rect x="7.4" y="3.8" width="5.2" height="1.6" rx="0.4" fill="#1F2937"/>
+    <path fill="#FDB913" d="M9 2.2h2l.8 1.6H8.2z"/>
+  </symbol>
+
+  <!-- Zurich Classic of New Orleans: Classic New Orleans Gold Fleur-de-lis on Navy -->
+  <symbol id="ic-zurich" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#002D62"/>
+    <!-- Gold Fleur-de-lis -->
+    <!-- Central Leaf -->
+    <path fill="#F5C024" d="M10 2.4c1.2 2.2 1.8 4.4 1.4 6.6H8.6c-.4-2.2.2-4.4 1.4-6.6z"/>
+    <!-- Left Leaf -->
+    <path fill="#F5C024" d="M8.2 9c-1.8 0-3.6-1.2-3.6-3 0-1.8 1.4-2.4 2.4-2.4.2 1.6.8 3.2 2 4.2-.3.6-.5.9-.8 1.2z"/>
+    <!-- Right Leaf -->
+    <path fill="#F5C024" d="M11.8 9c1.8 0 3.6-1.2 3.6-3 0-1.8-1.4-2.4-2.4-2.4-.2 1.6-.8 3.2-2 4.2.3.6.5.9.8 1.2z"/>
+    <!-- Center Horizontal Ring Bar -->
+    <rect x="5.8" y="9.2" width="8.4" height="1.6" rx="0.6" fill="#F5C024"/>
+    <!-- Bottom Pedestal -->
+    <path fill="#F5C024" d="M8.2 11.2c.4 1.8 1.2 3.4 1.8 4.8.6-1.4 1.4-3 1.8-4.8H8.2z"/>
+  </symbol>
+
+  <!-- Valspar Championship: Innisbrook Paint Splatters & Vibrant Artist Swatches -->
+  <symbol id="ic-valspar" viewBox="0 0 20 20">
+    <rect width="20" height="20" rx="3.5" fill="#FFFFFF"/>
+    <!-- 3 Dynamic Curved Paint Strokes (Cyan, Magenta, Yellow/Orange) -->
+    <path fill="#00A3E0" d="M3 4.2c4.2-1.4 10.8.2 13.8 2.8-.8 1.4-4.8 1-8.2 1-2.4 0-4.4-.8-5.6-3.8z"/>
+    <path fill="#E31B23" d="M2.5 9.4c4.8-1 11.2.6 14.8 2.4-1.2 1.4-5.2.8-8.6.8-2.6 0-4.8-.6-6.2-3.2z"/>
+    <path fill="#FFC72C" d="M3.2 14.6c4.6-.8 10.4.4 14.2 2-1.4 1.2-5.4.6-8.8.6-2.6 0-4.2-.4-5.4-2.6z"/>
+  </symbol>
  </defs>
 </svg>
 <div class="shell">
