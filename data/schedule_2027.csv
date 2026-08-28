@@ -1,1 +1,1 @@
-contestNumber,event,short,mark,major,dates,course,location,purse,previousWinner
+with open('schedule_2027.csv').read()

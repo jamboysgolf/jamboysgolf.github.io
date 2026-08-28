@@ -1,1 +1,1 @@
-id,display,venmo,groupmeUserId,confirmed
+with open('roster.csv').read()
