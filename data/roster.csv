@@ -1,46 +1,46 @@
-id,display,venmo,groupmeUserId,confirmed
-tcl00007,Thomas Long,Thomas-Long-3,6291333,True
-bjstout,Brandon Stout,Brandon-Stout,3690167,True
-banzaitrey2,Trey Schenzel,Trey-Schenzel,5363351,True
-hilyeri,Hilyer Isbell,Hilyer-Isbell,49046936,True
-guslido,Mathis Young,mathisy,31824053,True
-cilteam6,Council Y,Cil-Young,3410680,True
-acartledge,Andrew Cartledge,Andrew-Cartledge,3182822,True
-walshbt,Ben Walsh,Ben-Walsh-88,5581498,True
-bc32994,Blake Cole,BlakeColeJSU,16697001,True
-d_schmitt_3,Dalton,Dalton-Schmittou,13497036,True
-goodgoodchamp,Daniel Henderson,hender04,10619908,True
-chadt8,Chad Tow,ChadTow,8369541,True
-rinorman,Beer-Norman,Richard-Norman-1,4218229,True
-crawtator,crawtator,,,False
-titsmcgeeee,titsmcgeeee,,,False
-robert_swift,robert_swift,,,False
-arm1121,arm1121,,,False
-thomascrawfor-3K806,Thomas Crawford,Thomas-Crawford,,True
-HilyerIsbell,Hilyer Isbell,Hilyer-Isbell,49046936,True
-Brandon-10T9KS,Brandon Stout,Brandon-Stout,3690167,True
-cartledge,Andrew Cartledge,Andrew-Cartledge,3182822,True
-Chad-V8PQ1,Chad Tow,ChadTow,8369541,True
-Trey-11BUTG,Trey Schenzel,Trey-Schenzel,5363351,True
-GusYoung,Mathis Young,mathisy,31824053,True
-Sam-11BUNK,Sam Norman,,,True
-D_Norman-12VLI8,Beer-Norman,Richard-Norman-1,4218229,True
-Alverson,Alverson,,,False
-daniel-FM6U3,Daniel Henderson,hender04,10619908,True
-Joseph-V8PFV,Joseph-V8PFV,,,False
-ralfe-CISLJ,Ralfe Hickman,Ralfe-Hickman,,True
-CMYoung,Council Y,Cil-Young,3410680,True
-Virgil-168L17,Virgil-168L17,,,False
-ben-1UH3H,Ben Walsh,Ben-Walsh-88,5581498,True
-Frank-R3AOG,Frank-R3AOG,,,False
-nathan-H9J7H,nathan-H9J7H,,,False
-papat-7PMP,papat-7PMP,,,False
-Henry-QGP5L,Henry Hamilton,,,True
-Robert-PO0OV,Robert-PO0OV,,,False
-jon-13FLT2,jon-13FLT2,,,False
-hamp-6VIP7,Hamp Williford,Hamp-Williford,,True
-bryan-FCRCM,bryan-FCRCM,,,False
-JakeIDGAF,Jake Smith,,,True
-Jbud,Jbud,,,False
-JHG1244,JHG1244,,,False
-Will-UL48P,Will Strickland,,,True
+id,display,person,venmo,groupmeUserId,confirmed
+tcl00007,Thomas Long,thomas-long,Thomas-Long-3,6291333,True
+bjstout,Brandon Stout,brandon-stout,Brandon-Stout,3690167,True
+banzaitrey2,Trey Schenzel,trey-schenzel,Trey-Schenzel,5363351,True
+hilyeri,Hilyer Isbell,hilyer-isbell,Hilyer-Isbell,49046936,True
+guslido,Mathis Young,mathis-young,mathisy,31824053,True
+cilteam6,Council Y,council-young,Cil-Young,3410680,True
+acartledge,Andrew Cartledge,andrew-cartledge,Andrew-Cartledge,3182822,True
+walshbt,Ben Walsh,ben-walsh,Ben-Walsh-88,5581498,True
+bc32994,Blake Cole,blake-cole,BlakeColeJSU,16697001,True
+d_schmitt_3,Dalton,dalton-schmittou,Dalton-Schmittou,13497036,True
+goodgoodchamp,Daniel Henderson,daniel-henderson,hender04,10619908,True
+chadt8,Chad Tow,chad-tow,ChadTow,8369541,True
+rinorman,Beer-Norman,beer-norman,Richard-Norman-1,4218229,True
+crawtator,Thomas Crawford,thomas-crawford,Thomas-Crawford,,True
+titsmcgeeee,titsmcgeeee,titsmcgeeee,,,False
+robert_swift,robert_swift,robert-swift,,,False
+arm1121,arm1121,arm1121,,,False
+thomascrawfor-3K806,Thomas Crawford,thomas-crawford,Thomas-Crawford,,True
+HilyerIsbell,Hilyer Isbell,hilyer-isbell,Hilyer-Isbell,49046936,True
+Brandon-10T9KS,Brandon Stout,brandon-stout,Brandon-Stout,3690167,True
+cartledge,Andrew Cartledge,andrew-cartledge,Andrew-Cartledge,3182822,True
+Chad-V8PQ1,Chad Tow,chad-tow,ChadTow,8369541,True
+Trey-11BUTG,Trey Schenzel,trey-schenzel,Trey-Schenzel,5363351,True
+GusYoung,Mathis Young,mathis-young,mathisy,31824053,True
+Sam-11BUNK,Sam Norman,sam-norman,,,True
+D_Norman-12VLI8,Beer-Norman,beer-norman,Richard-Norman-1,4218229,True
+Alverson,Alverson,alverson,,,False
+daniel-FM6U3,Daniel Henderson,daniel-henderson,hender04,10619908,True
+Joseph-V8PFV,Joseph-V8PFV,joseph-v8pfv,,,False
+ralfe-CISLJ,Ralfe Hickman,ralfe-hickman,Ralfe-Hickman,,True
+CMYoung,Council Y,council-young,Cil-Young,3410680,True
+Virgil-168L17,Virgil-168L17,virgil-168l17,,,False
+ben-1UH3H,Ben Walsh,ben-walsh,Ben-Walsh-88,5581498,True
+Frank-R3AOG,Frank-R3AOG,frank-r3aog,,,False
+nathan-H9J7H,nathan-H9J7H,nathan-h9j7h,,,False
+papat-7PMP,papat-7PMP,papat-7pmp,,,False
+Henry-QGP5L,Henry Hamilton,henry-hamilton,,,True
+Robert-PO0OV,Robert-PO0OV,robert-po0ov,,,False
+jon-13FLT2,jon-13FLT2,jon-13flt2,,,False
+hamp-6VIP7,Hamp Williford,hamp-williford,Hamp-Williford,,True
+bryan-FCRCM,bryan-FCRCM,bryan-fcrcm,,,False
+JakeIDGAF,Jake Smith,jake-smith,,,True
+Jbud,Jbud,jbud,,,False
+JHG1244,JHG1244,jhg1244,,,False
+Will-UL48P,Will Strickland,will-strickland,,,True
