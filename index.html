@@ -1,4 +1,8 @@
 <title>JamBoys Leaderboard</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#3D6B45">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -36,7 +40,11 @@ body{background:var(--paper);color:var(--ink);
 /* ---- masthead: on-course leaderboard furniture ---- */
 .mast{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;
   padding-bottom:14px;border-bottom:2px solid var(--ink)}
-.brand{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+/* The mark is a flex item among baseline-aligned text, so it needs its own
+   alignment or it would sit its bottom edge on the wordmark's baseline and
+   ride high. Sized off the h1 so the two scale together. */
+.brand .mark{width:58px;height:58px;border-radius:13px;flex:0 0 auto;align-self:center;display:block}
 .brand h1{font-family:"Barlow Condensed",Impact,sans-serif;font-weight:700;font-size:44px;
   line-height:.92;letter-spacing:.02em;text-transform:uppercase;text-wrap:balance}
 .brand .szn{font-family:"Barlow Condensed",sans-serif;font-weight:500;font-size:17px;
@@ -240,6 +248,8 @@ a.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   body{padding:14px 10px 40px}
   .shell{gap:14px}
   .brand h1{font-size:31px}
+  .brand .mark{width:40px;height:40px;border-radius:9px}
+  .brand{gap:9px}
   .brand .szn{font-size:14px}
   .mast{gap:10px}
   .strip{gap:0;display:grid;grid-template-columns:repeat(2,1fr);row-gap:9px;column-gap:14px;width:100%}
@@ -270,6 +280,7 @@ a.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 <div class="shell">
   <header class="mast">
     <div class="brand">
+      <img class="mark" src="logo.png" width="58" height="58" alt="">
       <h1 id="lg-name">JamBoys</h1>
       <select class="szn-pick" id="szn-pick" aria-label="Season"></select>
     </div>
