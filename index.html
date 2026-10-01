@@ -100,9 +100,6 @@ th.sorted .th-label-bot{color:var(--accent-ink)}
   text-transform:uppercase;letter-spacing:.05em}
 .hint{font-size:12.5px;color:var(--muted);max-width:62ch}
 
-/* ---- scoring mode switch ---- */
-.seg{display:inline-flex;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:2px;gap:2px}
-.seg button{appearance:none;border:0;background:none;cursor:pointer;border-radius:4px;padding:6px 12px;
   font:600 11px/1 "IBM Plex Sans",sans-serif;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
 .seg button[aria-pressed="true"]{background:var(--surface);color:var(--accent-ink);box-shadow:0 1px 2px rgba(0,0,0,.10)}
 .seg button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
@@ -262,7 +259,6 @@ a.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .card-head > div:last-child{width:100%;justify-content:space-between}
   .toggles{flex:1}
   .tg{flex:1;justify-content:center;padding:8px 8px;font-size:10px}
-  .seg button{padding:8px 10px}
   th,td{padding:6px 6px}
   .sticky-name{min-width:0}
   .handle{font-size:10px}
@@ -301,21 +297,15 @@ a.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
         <h2>Season Standings</h2>
         <p class="hint" id="mode-hint"></p>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-        <div class="toggles">
-          <button class="tg" id="tg-pay"    aria-expanded="false" aria-controls="tbl"><span class="caret">&#9654;</span>Payout breakdown</button>
-          <button class="tg" id="tg-scores" aria-expanded="true"  aria-controls="tbl"><span class="caret">&#9654;</span>Weekly scores</button>
-        </div>
-        <div class="seg" role="group" aria-label="Scoring method">
-          <button id="m-all"  aria-pressed="true">All 15</button>
-          <button id="m-drop" aria-pressed="false">Best 13</button>
-        </div>
+      <div class="toggles">
+        <button class="tg" id="tg-pay"    aria-expanded="false" aria-controls="tbl"><span class="caret">&#9654;</span>Payout breakdown</button>
+        <button class="tg" id="tg-scores" aria-expanded="true"  aria-controls="tbl"><span class="caret">&#9654;</span>Weekly scores</button>
       </div>
     </div>
     <div class="scroll"><table id="tbl"><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
     <div class="legend">
       <span><span class="sw" style="background:var(--accent-soft)"></span>Weekly high</span>
-      <span><span class="dropped">000.0</span> &nbsp;Dropped under Best 13</span>
+      <span id="lg-drop" hidden><span class="dropped">000.0</span> &nbsp;Dropped</span>
       <span>Side bet is <strong>net</strong> &mdash; winnings less stakes paid. Hover for the split.</span>
       <span id="lg-prizes"></span>
     </div>
@@ -686,7 +676,7 @@ a.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
      0,
      0
     ],
-    "dropWorst": 2,
+    "dropWorst": 1,
     "salaryCap": "$60k",
     "lineupSize": 6,
     "note": "Prize structure not set. 2026 ran $99 a man into a season pool split 5:3:2; the 2nd half added a weekly pot of the same size."
@@ -1188,7 +1178,7 @@ a.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
      386.1,
      257.4
     ],
-    "dropWorst": 2,
+    "dropWorst": 0,
     "salaryCap": "$60k",
     "lineupSize": 6
    },
@@ -1889,7 +1879,7 @@ a.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
      504.9,
      336.6
     ],
-    "dropWorst": 2,
+    "dropWorst": 0,
     "salaryCap": "$60k",
     "lineupSize": 6
    },
@@ -3816,7 +3806,15 @@ function hydrate(id){
   const s = RAW.seasons.find(x => x.id === id) || RAW.seasons[0];
   return {
     id: s.id, label: s.label, status: s.status,
-    league: s.league, contests: s.contests, sideBets: s.sideBets || [],
+    league: s.league,
+    /* The Yahoo-era seasons carry no contest list - there was no schedule to
+       import. Synthesise one so every renderer can assume contests exists;
+       without it renderStrip throws and the whole tab silently keeps showing
+       the previous season's table. */
+    contests: (s.contests && s.contests.length)
+      ? s.contests
+      : Array.from({length: s.league.contestCount}, (_, i) => ({n: i + 1})),
+    sideBets: s.sideBets || [],
     players: s.players.map(p => {
       const who = RAW.people[p.id] || {};
       return Object.assign({}, p, {
@@ -3830,22 +3828,24 @@ function hydrate(id){
   };
 }
 D = hydrate(RAW.activeSeasonId);
-let MODE = 'all';                       // 'all' | 'drop'
 const N = () => D.league.contestCount;
-const DROP = () => D.league.dropWorst;
+const DROP = () => D.league.dropWorst || 0;
 
-/* Best-N total: drop the k lowest scores. A 0 (no lineup) subtracts nothing,
-   so everyone ends up judged on the same number of real contests. */
-function total(p, mode){
-  if (mode === 'all') return p.scores.reduce((a,b)=>a+b, 0);
+/* Season total: drop the k lowest scores, where k is the season's own
+   dropWorst. A 0 (no lineup) subtracts nothing, so dropping it puts a man who
+   played 15 and a man who played 16 on the same footing; the second miss is
+   the one that starts to cost, because by then a real 0 survives into the
+   total. dropWorst 0 means every contest counts. */
+function total(p){
+  if (!DROP()) return p.scores.reduce((a,b)=>a+b, 0);
   return p.scores.slice().sort((a,b)=>a-b).slice(DROP()).reduce((a,b)=>a+b, 0);
 }
 function droppedIdx(p){
   const order = p.scores.map((s,i)=>[s,i]).sort((a,b)=>a[0]-b[0]).slice(0, DROP());
   return new Set(order.map(x=>x[1]));
 }
-function ranked(mode){
-  return D.players.map(p=>({p, t: total(p, mode)})).sort((a,b)=>b.t-a.t);
+function ranked(){
+  return D.players.map(p=>({p, t: total(p)})).sort((a,b)=>b.t-a.t);
 }
 const byId  = id => D.players.find(p=>p.id===id);
 const byUid = uid => D.players.find(p=>p.groupmeUserId===uid);
@@ -4014,8 +4014,7 @@ function renderHistory(){
    Side:    NET. Winning a side bet pays amount x (entrants - 1); being in and
             losing costs the stake. Shown net because that is what actually
             lands in a man's pocket. Zero-sum across the league by construction.
-   Season:  depends on the scoring mode, so switching All 15 / Best 13 moves
-            this column and the total with it. That is the point.                */
+   Season:  top-3 prize by the season standing, which is itself after the drop. */
 function moneyRows(rows){
   const wk = {}, side = {}, won = {}, lost = {}, season = {};
   D.players.forEach(p => { wk[p.id]=0; side[p.id]=0; won[p.id]=0; lost[p.id]=0; season[p.id]=0; });
@@ -4054,7 +4053,6 @@ function sortValue(r, key, ctx){
   const p = r.p;
   if (key === 'player')   return p.display.toLowerCase();
   if (key === 'points')   return r.t;
-  if (key === 'delta')    return ctx.otherRank[p.id] - ctx.rank[p.id];
   if (key === 'weekly')   return ctx.M.wk[p.id];
   if (key === 'side')     return ctx.M.side[p.id];
   if (key === 'season')   return ctx.M.season[p.id];
@@ -4090,22 +4088,23 @@ function toggleSort(key){
 
 /* ---------- standings ---------- */
 function renderStandings(){
-  const rows = ranked(MODE);
+  const rows = ranked();
   const rank = {}; rows.forEach((r,i)=> rank[r.p.id] = i+1);      // by points, authoritative
-  const other = ranked(MODE==='all' ? 'drop' : 'all');
-  const otherRank = {}; other.forEach((r,i)=> otherRank[r.p.id] = i+1);
   const M = moneyRows(rows);
-  const ctx = {rank, otherRank, M};
+  const ctx = {rank, M};
   const view = sortRows(rows, ctx);
   const sortedByRank = SORT.key === 'points' && SORT.dir === 'desc';
 
-  const label = {player:'player name', delta:'movement', points:'points', weekly:'weekly winnings',
+  const label = {player:'player name', points:'points', weekly:'weekly winnings',
                  side:'side-bet net', season:'season money', winnings:'total winnings'}[SORT.key]
                  || `Contest ${(+SORT.key.slice(1))+1}`;
-  $('#mode-hint').innerHTML = (MODE==='all'
-    ? `Every contest counts. <strong>&Delta;</strong> shows where each man would move if the two worst scores were dropped.`
-    : `Each man's ${DROP()} worst scores are struck out and excluded, so everyone is judged on ${N()-DROP()} contests. <strong>&Delta;</strong> shows the move versus counting all ${N()}.`)
+  const dn = DROP();
+  $('#mode-hint').innerHTML = (dn
+    ? `Each man's ${dn===1?'worst score is':dn+' worst scores are'} struck out and excluded, so everyone is judged on his best ${N()-dn} of ${N()}.`
+    : `Every contest counts.`)
     + (sortedByRank ? '' : ` Sorted by <strong>${label}</strong>, ${SORT.dir==='desc'?'high to low':'low to high'} &mdash; the number beside each man is still his season place.`);
+  const lgd = $('#lg-drop');
+  if (lgd) lgd.hidden = !dn;
 
   const weeklyBest = Array.from({length:N()}, (_,c)=> Math.max(...D.players.map(p=>p.scores[c])));
 
@@ -4148,7 +4147,6 @@ function renderStandings(){
 
   $('#thead').innerHTML = '<tr>' +
     th('player','Player','l sticky-name','min-width:186px') +
-    th('delta','&Delta;','','width:46px') +
     th('points','Points','num col-tot','width:78px') +
     th('weekly','Weekly','num g-pay grp','width:78px') +
     th('side','Side bet','num g-pay grp','width:82px') +
@@ -4159,7 +4157,7 @@ function renderStandings(){
     '</tr>';
 
   $('#tbody').innerHTML = view.map((r)=>{
-    const p = r.p, i = rank[p.id] - 1, drops = MODE==='drop' ? droppedIdx(p) : new Set();
+    const p = r.p, i = rank[p.id] - 1, drops = DROP() ? droppedIdx(p) : new Set();
     const cells = p.scores.map((s,c)=>{
       const cls = `num g-score${c===0?' grp':''}${SORT.key==='c'+c?' sortcol':''}`;
       if (s===0) return `<td class="${cls} dnp">&mdash;</td>`;
@@ -4167,11 +4165,6 @@ function renderStandings(){
       const hi = Math.abs(s-weeklyBest[c]) < .01;
       return `<td class="${cls}"><span class="sv${hi?' best':''}">${pts(s)}</span></td>`;
     }).join('');
-
-    const d = otherRank[p.id] - (i+1);
-    // positive d = this mode ranks him nearer the top than the other mode = climbed
-    const dCell = d===0 ? `<td class="flat">&ndash;</td>`
-      : d>0 ? `<td class="up">&#9650;${d}</td>` : `<td class="dn">&#9660;${Math.abs(d)}</td>`;
 
     const wkM = M.wk[p.id], sdM = M.side[p.id], snM = M.season[p.id];
     const tot = wkM + sdM + snM;
@@ -4185,7 +4178,6 @@ function renderStandings(){
     return `<tr>
       <td class="l sticky-name"><div class="rankwrap">${badge(i)}
         <div><div class="who">${p.display}${conf}</div><div class="handle">${p.id}</div></div></div></td>
-      ${dCell}
       <td class="num col-tot">${pts(r.t)}</td>
       ${cell(wkM,'paid', wins ? `${wins} weekly win${wins>1?'s':''}` : '')}
       ${cell(sdM,'paid', sdTitle)}
@@ -4194,7 +4186,7 @@ function renderStandings(){
       ${cells}</tr>`;
   }).join('');
 
-  fitColumns();   // thead is rebuilt on every sort / mode change, so re-fit
+  fitColumns();   // thead is rebuilt on every sort, so re-fit
 }
 
 /* ---------- fit the contest grid to the available width ----------
@@ -4340,8 +4332,6 @@ $('#szn-pick').addEventListener('change', e => {
   SORT = {key:'points', dir:'desc'};      // a new season invalidates a contest-column sort
   renderAll();
 });
-$('#m-all').addEventListener('click', ()=>setMode('all'));
-$('#m-drop').addEventListener('click',()=>setMode('drop'));
 /* Delegated on the table, which survives every re-render of thead/tbody. */
 $('#tbl').addEventListener('click', e => {
   const h = e.target.closest('th[data-k]');
@@ -4357,13 +4347,6 @@ $('#tg-pay').addEventListener('click', e =>
   setGroup('pay',    e.currentTarget.getAttribute('aria-expanded') !== 'true'));
 $('#tg-scores').addEventListener('click', e =>
   setGroup('scores', e.currentTarget.getAttribute('aria-expanded') !== 'true'));
-function setMode(m){
-  MODE = m;
-  $('#m-all').setAttribute('aria-pressed', m==='all');
-  $('#m-drop').setAttribute('aria-pressed', m==='drop');
-  renderStandings();
-}
-
 function renderAll(){
   renderStrip(); renderStandings(); renderBets(); renderRoster(); renderHistory();
   // Defaults: payouts closed. Weekly scores open on desktop, closed on a phone -
