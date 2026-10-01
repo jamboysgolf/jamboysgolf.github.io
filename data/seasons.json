@@ -1,0 +1,1686 @@
+{
+ "activeSeasonId": "2027-h1",
+ "groupmeId": "30905635",
+ "seasons": [
+  {
+   "id": "2027-h1",
+   "label": "2027 - 1st Half",
+   "status": "scheduled",
+   "league": {
+    "name": "JamBoys",
+    "contestCount": 16,
+    "weeklyPrize": 0,
+    "seasonPrizes": [
+     0,
+     0,
+     0
+    ],
+    "dropWorst": 1,
+    "salaryCap": "$60k",
+    "lineupSize": 6,
+    "note": "Prize structure not set. 2026 ran $99 a man into a season pool split 5:3:2; the 2nd half added a weekly pot of the same size."
+   },
+   "contests": [
+    {
+     "n": 1,
+     "date": "2027-01-21",
+     "dates": "Jan 21 - 24",
+     "event": "The American Express",
+     "short": "AmEx",
+     "course": "Pete Dye Stadium Course",
+     "location": "La Quinta, CA",
+     "major": false,
+     "mark": "amex",
+     "status": "scheduled"
+    },
+    {
+     "n": 2,
+     "date": "2027-01-28",
+     "dates": "Jan 27 - 30",
+     "event": "The Sentry",
+     "short": "Sentry",
+     "course": "Torrey Pines (South)",
+     "location": "San Diego, CA",
+     "major": false,
+     "mark": "sentry",
+     "status": "scheduled"
+    },
+    {
+     "n": 3,
+     "date": "2027-02-04",
+     "dates": "Feb 4 - 7",
+     "event": "AT&T Pebble Beach Pro-Am",
+     "short": "Pebble",
+     "course": "Pebble Beach Golf Links",
+     "location": "Pebble Beach, CA",
+     "major": false,
+     "mark": "pebble",
+     "status": "scheduled"
+    },
+    {
+     "n": 4,
+     "date": "2027-02-11",
+     "dates": "Feb 11 - 14",
+     "event": "WM Phoenix Open",
+     "short": "WMPO",
+     "course": "TPC Scottsdale (Stadium)",
+     "location": "Scottsdale, AZ",
+     "major": false,
+     "mark": "phx",
+     "status": "scheduled"
+    },
+    {
+     "n": 5,
+     "date": "2027-02-18",
+     "dates": "Feb 18 - 21",
+     "event": "The Genesis Invitational",
+     "short": "Genesis",
+     "course": "The Riviera Country Club",
+     "location": "Pacific Palisades, CA",
+     "major": false,
+     "mark": "genesis",
+     "status": "scheduled"
+    },
+    {
+     "n": 6,
+     "date": "2027-02-25",
+     "dates": "Feb 25 - 28",
+     "event": "Cognizant Classic in The Palm Beaches",
+     "short": "Cognizant",
+     "course": "PGA National",
+     "location": "Palm Beach Gardens, FL",
+     "major": false,
+     "mark": "cognizant",
+     "status": "scheduled"
+    },
+    {
+     "n": 7,
+     "date": "2027-03-04",
+     "dates": "Mar 4 - 7",
+     "event": "Cadillac Championship",
+     "short": "Cadillac",
+     "course": "Trump National Doral",
+     "location": "Miami, FL",
+     "major": false,
+     "mark": "cadillac",
+     "status": "scheduled"
+    },
+    {
+     "n": 8,
+     "date": "2027-03-11",
+     "dates": "Mar 11 - 14",
+     "event": "THE PLAYERS Championship",
+     "short": "PLAYERS",
+     "course": "TPC Sawgrass",
+     "location": "Ponte Vedra Beach, FL",
+     "major": false,
+     "mark": "players",
+     "status": "scheduled"
+    },
+    {
+     "n": 9,
+     "date": "2027-03-18",
+     "dates": "Mar 18 - 21",
+     "event": "Arnold Palmer Invitational",
+     "short": "Bay Hill",
+     "course": "Bay Hill Club & Lodge",
+     "location": "Orlando, FL",
+     "major": false,
+     "mark": "bayhill",
+     "status": "scheduled"
+    },
+    {
+     "n": 10,
+     "date": "2027-03-25",
+     "dates": "Mar 25 - 28",
+     "event": "Texas Children's Houston Open",
+     "short": "Houston",
+     "course": "Memorial Park Golf Course",
+     "location": "Houston, TX",
+     "major": false,
+     "mark": "houston",
+     "status": "scheduled"
+    },
+    {
+     "n": 11,
+     "date": "2027-04-01",
+     "dates": "Apr 1 - 4",
+     "event": "Valero Texas Open",
+     "short": "Valero",
+     "course": "TPC San Antonio",
+     "location": "San Antonio, TX",
+     "major": false,
+     "mark": "valero",
+     "status": "scheduled"
+    },
+    {
+     "n": 12,
+     "date": "2027-04-08",
+     "dates": "Apr 8 - 11",
+     "event": "Masters Tournament",
+     "short": "Masters",
+     "course": "Augusta National Golf Club",
+     "location": "Augusta, GA",
+     "major": true,
+     "mark": "masters",
+     "status": "scheduled"
+    },
+    {
+     "n": 13,
+     "date": "2027-04-15",
+     "dates": "Apr 15 - 18",
+     "event": "RBC Heritage",
+     "short": "Heritage",
+     "course": "Harbour Town Golf Links",
+     "location": "Hilton Head Island, SC",
+     "major": false,
+     "mark": "heritage",
+     "status": "scheduled"
+    },
+    {
+     "n": 14,
+     "date": "2027-04-22",
+     "dates": "Apr 22 - 25",
+     "event": "Zurich Classic of New Orleans",
+     "short": "Zurich",
+     "course": "TPC Louisiana",
+     "location": "Avondale, LA",
+     "major": false,
+     "mark": "zurich",
+     "status": "scheduled"
+    },
+    {
+     "n": 15,
+     "date": "2027-04-29",
+     "dates": "Apr 29 - May 2",
+     "event": "THE CJ CUP Byron Nelson",
+     "short": "CJ Cup",
+     "course": "TPC Craig Ranch",
+     "location": "McKinney, TX",
+     "major": false,
+     "mark": "cj",
+     "status": "scheduled"
+    },
+    {
+     "n": 16,
+     "date": "2027-05-06",
+     "dates": "May 6 - 9",
+     "event": "Valspar Championship",
+     "short": "Valspar",
+     "course": "Innisbrook (Copperhead)",
+     "location": "Palm Harbor, FL",
+     "major": false,
+     "mark": "valspar",
+     "status": "scheduled"
+    }
+   ],
+   "players": [
+    {
+     "id": "tcl00007",
+     "payout": 0,
+     "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "bjstout",
+     "payout": 0,
+     "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "banzaitrey2",
+     "payout": 0,
+     "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "hilyeri",
+     "payout": 0,
+     "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "guslido",
+     "payout": 0,
+     "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "cilteam6",
+     "payout": 0,
+     "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "acartledge",
+     "payout": 0,
+     "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "walshbt",
+     "payout": 0,
+     "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "bc32994",
+     "payout": 0,
+     "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "d_schmitt_3",
+     "payout": 0,
+     "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "goodgoodchamp",
+     "payout": 0,
+     "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "chadt8",
+     "payout": 0,
+     "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "rinorman",
+     "payout": 0,
+     "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ],
+   "sideBets": []
+  },
+  {
+   "id": "2026-h2",
+   "label": "2026 - 2nd Half",
+   "status": "final",
+   "league": {
+    "name": "JamBoys",
+    "contestCount": 15,
+    "weeklyPrize": 85.8,
+    "seasonPrizes": [
+     643.5,
+     386.1,
+     257.4
+    ],
+    "dropWorst": 0,
+    "salaryCap": "$60k",
+    "lineupSize": 6
+   },
+   "contests": [
+    {
+     "n": 1,
+     "date": "2026-05-14",
+     "status": "final",
+     "dates": "May 14 - 17",
+     "event": "PGA Championship",
+     "short": "PGA",
+     "course": "Aronimink Golf Club",
+     "location": "Newtown Square, PA",
+     "champion": "Aaron Rai",
+     "winScore": "271 (-9)",
+     "major": true,
+     "mark": "pga"
+    },
+    {
+     "n": 2,
+     "date": "2026-05-21",
+     "status": "final",
+     "dates": "May 21 - 24",
+     "event": "THE CJ CUP Byron Nelson",
+     "short": "CJ Cup",
+     "course": "TPC Craig Ranch",
+     "location": "McKinney, TX",
+     "champion": "Wyndham Clark",
+     "winScore": "254 (-30)",
+     "major": false,
+     "mark": "cj"
+    },
+    {
+     "n": 3,
+     "date": "2026-05-28",
+     "status": "final",
+     "dates": "May 28 - 31",
+     "event": "Charles Schwab Challenge",
+     "short": "Schwab",
+     "course": "Colonial Country Club",
+     "location": "Fort Worth, TX",
+     "champion": "Russell Henley",
+     "winScore": "268 (-12)",
+     "major": false,
+     "mark": "tx"
+    },
+    {
+     "n": 4,
+     "date": "2026-06-04",
+     "status": "final",
+     "dates": "Jun 4 - 7",
+     "event": "the Memorial Tournament pres. by Workday",
+     "short": "Memorial",
+     "course": "Muirfield Village Golf Club",
+     "location": "Dublin, OH",
+     "champion": "J.T. Poston",
+     "winScore": "276 (-12)",
+     "major": false,
+     "mark": "mem"
+    },
+    {
+     "n": 5,
+     "date": "2026-06-11",
+     "status": "final",
+     "dates": "Jun 11 - 14",
+     "event": "RBC Canadian Open",
+     "short": "RBC",
+     "course": "TPC Toronto at Osprey Valley (North)",
+     "location": "Caledon, ON",
+     "champion": "Bud Cauley",
+     "winScore": "263 (-17)",
+     "major": false,
+     "mark": "ca"
+    },
+    {
+     "n": 6,
+     "date": "2026-06-18",
+     "status": "final",
+     "dates": "Jun 18 - 21",
+     "event": "U.S. Open",
+     "short": "US Open",
+     "course": "Shinnecock Hills Golf Club",
+     "location": "Southampton, NY",
+     "champion": "Wyndham Clark",
+     "winScore": "276 (-4)",
+     "major": true,
+     "mark": "us"
+    },
+    {
+     "n": 7,
+     "date": "2026-06-25",
+     "status": "final",
+     "dates": "Jun 25 - 29",
+     "event": "Travelers Championship",
+     "short": "Travelers",
+     "course": "TPC River Highlands",
+     "location": "Cromwell, CT",
+     "champion": "Viktor Hovland",
+     "winScore": "259 (-21)",
+     "major": false,
+     "mark": "umb"
+    },
+    {
+     "n": 8,
+     "date": "2026-07-02",
+     "status": "final",
+     "dates": "Jul 2 - 5",
+     "event": "John Deere Classic",
+     "short": "Deere",
+     "course": "TPC Deere Run",
+     "location": "Silvis, IL",
+     "champion": "Chris Gotterup",
+     "winScore": "264 (-20)",
+     "major": false,
+     "mark": "jd"
+    },
+    {
+     "n": 9,
+     "date": "2026-07-09",
+     "status": "final",
+     "dates": "Jul 9 - 12",
+     "event": "Genesis Scottish Open",
+     "short": "Scottish",
+     "course": "The Renaissance Club",
+     "location": "North Berwick, Scotland",
+     "champion": "Tom Kim",
+     "winScore": "263 (-17)",
+     "major": false,
+     "note": "ISCO Championship ran the same week; league played the Scottish Open.",
+     "mark": "sco"
+    },
+    {
+     "n": 10,
+     "date": "2026-07-16",
+     "status": "final",
+     "dates": "Jul 16 - 19",
+     "event": "The Open",
+     "short": "Open",
+     "course": "Royal Birkdale GC",
+     "location": "Southport, England",
+     "champion": "Ryan Fox",
+     "winScore": "270 (-10)",
+     "major": true,
+     "note": "Corales Puntacana ran the same week; league played The Open.",
+     "mark": "gb"
+    },
+    {
+     "n": 11,
+     "date": "2026-07-23",
+     "status": "final",
+     "dates": "Jul 23 - 26",
+     "event": "3M Open",
+     "short": "3M",
+     "course": "TPC Twin Cities",
+     "location": "Blaine, MN",
+     "champion": "Jackson Koivun",
+     "winScore": "259 (-25)",
+     "major": false,
+     "mark": "3m"
+    },
+    {
+     "n": 12,
+     "date": "2026-07-30",
+     "status": "final",
+     "dates": "Jul 30 - Aug 2",
+     "event": "Rocket Classic",
+     "short": "Rocket",
+     "course": "Detroit Golf Club",
+     "location": "Detroit, MI",
+     "champion": "Michael Thorbjornsen",
+     "winScore": "262 (-18)",
+     "major": false,
+     "mark": "rkt"
+    },
+    {
+     "n": 13,
+     "date": "2026-08-06",
+     "status": "final",
+     "dates": "Aug 6 - 9",
+     "event": "Wyndham Championship",
+     "short": "Wyndham",
+     "course": "Sedgefield Country Club",
+     "location": "Greensboro, NC",
+     "champion": "Michael Brennan",
+     "winScore": "258 (-22)",
+     "major": false,
+     "mark": "wyn"
+    },
+    {
+     "n": 14,
+     "date": "2026-08-13",
+     "status": "final",
+     "dates": "Aug 13 - 16",
+     "event": "FedEx St. Jude Championship",
+     "short": "FedEx",
+     "course": "TPC Southwind",
+     "location": "Memphis, TN",
+     "champion": "Scottie Scheffler",
+     "winScore": "263 (-17)",
+     "major": false,
+     "mark": "fdx"
+    },
+    {
+     "n": 15,
+     "date": "2026-08-20",
+     "status": "final",
+     "dates": "Aug 20 - 23",
+     "event": "BMW Championship",
+     "short": "BMW",
+     "course": "Bellerive Country Club",
+     "location": "St. Louis, MO",
+     "champion": "Wyndham Clark",
+     "winScore": "263 (-17)",
+     "major": false,
+     "mark": "bmw"
+    }
+   ],
+   "players": [
+    {
+     "id": "tcl00007",
+     "payout": 171.6,
+     "scores": [
+      349.5,
+      737.1,
+      385.1,
+      385.5,
+      381.7,
+      182.4,
+      451.0,
+      492.9,
+      256.0,
+      421.6,
+      379.7,
+      426.0,
+      412.2,
+      424.5,
+      428.2
+     ]
+    },
+    {
+     "id": "bjstout",
+     "payout": 85.8,
+     "scores": [
+      398.2,
+      587.4,
+      357.2,
+      253.9,
+      489.6,
+      237.3,
+      586.6,
+      563.5,
+      416.9,
+      281.4,
+      652.2,
+      347.2,
+      475.0,
+      401.2,
+      414.0
+     ]
+    },
+    {
+     "id": "banzaitrey2",
+     "payout": 85.8,
+     "scores": [
+      343.1,
+      612.8,
+      397.1,
+      334.2,
+      377.3,
+      221.5,
+      582.4,
+      0,
+      469.8,
+      372.8,
+      408.5,
+      497.8,
+      306.7,
+      404.9,
+      402.2
+     ]
+    },
+    {
+     "id": "hilyeri",
+     "payout": 0,
+     "scores": [
+      346.4,
+      525.5,
+      349.6,
+      385.9,
+      377.7,
+      225.4,
+      561.5,
+      506.5,
+      400.9,
+      327.3,
+      567.3,
+      457.0,
+      422.6,
+      388.9,
+      395.9
+     ]
+    },
+    {
+     "id": "guslido",
+     "payout": 257.4,
+     "scores": [
+      264.4,
+      693.4,
+      456.8,
+      245.6,
+      324.1,
+      201.0,
+      519.2,
+      511.5,
+      367.4,
+      261.6,
+      686.8,
+      297.2,
+      491.5,
+      426.6,
+      486.2
+     ]
+    },
+    {
+     "id": "cilteam6",
+     "payout": 0,
+     "scores": [
+      240.4,
+      560.0,
+      326.4,
+      334.0,
+      511.2,
+      176.0,
+      0,
+      484.1,
+      384.8,
+      303.7,
+      0,
+      455.1,
+      0,
+      422.5,
+      354.8
+     ]
+    },
+    {
+     "id": "acartledge",
+     "payout": 85.8,
+     "scores": [
+      215.7,
+      532.7,
+      434.1,
+      306.8,
+      352.3,
+      266.2,
+      641.3,
+      491.5,
+      378.2,
+      305.5,
+      550.0,
+      405.8,
+      394.2,
+      401.2,
+      438.7
+     ]
+    },
+    {
+     "id": "walshbt",
+     "payout": 171.6,
+     "scores": [
+      206.0,
+      579.2,
+      301.3,
+      464.5,
+      288.3,
+      200.7,
+      560.2,
+      583.9,
+      320.9,
+      295.0,
+      319.4,
+      441.3,
+      419.7,
+      405.8,
+      413.7
+     ]
+    },
+    {
+     "id": "bc32994",
+     "payout": 85.8,
+     "scores": [
+      246.0,
+      643.9,
+      308.9,
+      0,
+      394.7,
+      325.9,
+      496.8,
+      476.3,
+      444.4,
+      263.3,
+      519.8,
+      473.5,
+      503.0,
+      434.8,
+      465.9
+     ]
+    },
+    {
+     "id": "d_schmitt_3",
+     "payout": 171.6,
+     "scores": [
+      222.7,
+      549.9,
+      302.4,
+      0,
+      554.1,
+      257.5,
+      545.2,
+      490.2,
+      255.0,
+      285.5,
+      0,
+      311.7,
+      0,
+      478.5,
+      445.6
+     ]
+    },
+    {
+     "id": "goodgoodchamp",
+     "payout": 0,
+     "scores": [
+      0,
+      555.0,
+      251.6,
+      287.8,
+      496.9,
+      202.1,
+      602.5,
+      402.6,
+      350.5,
+      126.7,
+      494.4,
+      447.6,
+      332.7,
+      332.9,
+      462.1
+     ]
+    },
+    {
+     "id": "chadt8",
+     "payout": 85.8,
+     "scores": [
+      242.1,
+      523.3,
+      404.5,
+      0,
+      308.3,
+      297.8,
+      614.4,
+      557.1,
+      485.6,
+      382.0,
+      431.1,
+      387.5,
+      473.0,
+      388.7,
+      432.8
+     ]
+    },
+    {
+     "id": "rinorman",
+     "payout": 85.8,
+     "scores": [
+      270.3,
+      444.1,
+      377.1,
+      0,
+      342.5,
+      192.7,
+      560.7,
+      0,
+      399.5,
+      347.7,
+      466.1,
+      423.0,
+      533.1,
+      453.3,
+      373.1
+     ]
+    }
+   ],
+   "sideBets": [
+    {
+     "contest": 1,
+     "amount": 25,
+     "pollId": "1778709969235535",
+     "subject": "$25 side bet for PGA Championship",
+     "closes": 1778798737,
+     "inUserIds": [
+      "13497036",
+      "16697001",
+      "31824053",
+      "3182822",
+      "3690167",
+      "49046936",
+      "5363351",
+      "5581498"
+     ]
+    },
+    {
+     "contest": 2,
+     "amount": 20,
+     "pollId": "1779328135641919",
+     "subject": "$20 side bet for Byron Nelson",
+     "closes": 1779370955,
+     "inUserIds": [
+      "10619908",
+      "13497036",
+      "31824053",
+      "3182822",
+      "3690167",
+      "4218229",
+      "5581498"
+     ]
+    },
+    {
+     "contest": 3,
+     "amount": 20,
+     "pollId": "1779840584868294",
+     "subject": "$20 side bet for this week",
+     "closes": 1779969612,
+     "inUserIds": [],
+     "note": "Poll was posted but nobody voted - no side bet settled this week."
+    },
+    {
+     "contest": 4,
+     "amount": 20,
+     "pollId": "1780427318120528",
+     "subject": "$20 for the Memorial this week!",
+     "closes": 1780573502,
+     "inUserIds": [],
+     "note": "Poll was posted but nobody voted - no side bet settled this week."
+    },
+    {
+     "contest": 5,
+     "amount": 20,
+     "pollId": "1781011483010459",
+     "subject": "$20 side bet for RBC Canadian Open",
+     "closes": 1781179215,
+     "inUserIds": [],
+     "note": "Poll was posted but nobody voted - no side bet settled this week."
+    },
+    {
+     "contest": 6,
+     "amount": 25,
+     "pollId": "1781569081526709",
+     "subject": "$25 side bet for US Open!!",
+     "closes": 1781825457,
+     "inUserIds": [],
+     "note": "Poll was posted but nobody voted - no side bet settled this week."
+    },
+    {
+     "contest": 7,
+     "amount": 20,
+     "pollId": "1782320900694966",
+     "subject": "$20 side bet for Travelers Championship",
+     "closes": 1782387953,
+     "inUserIds": [
+      "13497036",
+      "3182822",
+      "3690167",
+      "5581498",
+      "8369541"
+     ]
+    },
+    {
+     "contest": 8,
+     "amount": 20,
+     "pollId": "1782959530382501",
+     "subject": "$20 side bet for this week",
+     "closes": 1782993617,
+     "inUserIds": [
+      "3182822",
+      "8369541"
+     ]
+    },
+    {
+     "contest": 9,
+     "amount": 20,
+     "pollId": "1783526890075435",
+     "subject": "$20 side bet for Scottish Open",
+     "closes": 1783577702,
+     "inUserIds": [
+      "3182822",
+      "3690167",
+      "5581498"
+     ]
+    },
+    {
+     "contest": 10,
+     "amount": 25,
+     "pollId": "1783980144038550",
+     "subject": "$25 side bet for The Open!",
+     "closes": 1784190624,
+     "inUserIds": [],
+     "note": "Poll was posted but nobody voted - no side bet settled this week."
+    },
+    {
+     "contest": 11,
+     "amount": 20,
+     "pollId": "1784726414529845",
+     "subject": "$20 side bet for 3m Open",
+     "closes": 1784811619,
+     "inUserIds": [
+      "3182822",
+      "3690167",
+      "5581498",
+      "8369541"
+     ]
+    },
+    {
+     "contest": 12,
+     "amount": 20,
+     "pollId": "1785246286563477",
+     "subject": "$20 side bet for Rocket Classic",
+     "closes": 1785415530,
+     "inUserIds": [
+      "10619908",
+      "3182822",
+      "3690167",
+      "5581498",
+      "8369541"
+     ]
+    },
+    {
+     "contest": 13,
+     "amount": 20,
+     "pollId": "1785942408947214",
+     "subject": "Like this for $20 side bet this week!",
+     "closes": 1786019431,
+     "inUserIds": [
+      "3182822",
+      "3690167",
+      "8369541"
+     ]
+    },
+    {
+     "contest": 14,
+     "amount": 20,
+     "pollId": "1786581907778693",
+     "subject": "St Jude side bet, $20",
+     "closes": 1786624246,
+     "inUserIds": [
+      "10619908",
+      "13497036",
+      "31824053",
+      "3182822",
+      "3410680",
+      "3690167",
+      "4218229",
+      "5363351",
+      "5581498",
+      "8369541"
+     ]
+    },
+    {
+     "contest": 15,
+     "amount": 25,
+     "pollId": "1786990549589034",
+     "subject": "$25 side bet this week, good luck everyone!",
+     "closes": 1787229909,
+     "inUserIds": [
+      "10619908",
+      "13497036",
+      "31824053",
+      "3182822",
+      "3410680",
+      "3690167",
+      "4218229",
+      "49046936",
+      "5581498",
+      "8369541"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2026-h1",
+   "label": "2026 - 1st Half",
+   "status": "final",
+   "league": {
+    "name": "JamBoys",
+    "contestCount": 16,
+    "weeklyPrize": 105.18,
+    "seasonPrizes": [
+     841.5,
+     504.9,
+     336.6
+    ],
+    "dropWorst": 0,
+    "salaryCap": "$60k",
+    "lineupSize": 6
+   },
+   "contests": [
+    {
+     "n": 1,
+     "date": "2026-01-15",
+     "status": "final"
+    },
+    {
+     "n": 2,
+     "date": "2026-01-22",
+     "status": "final"
+    },
+    {
+     "n": 3,
+     "date": "2026-01-29",
+     "status": "final"
+    },
+    {
+     "n": 4,
+     "date": "2026-02-05",
+     "status": "final"
+    },
+    {
+     "n": 5,
+     "date": "2026-02-12",
+     "status": "final"
+    },
+    {
+     "n": 6,
+     "date": "2026-02-19",
+     "status": "final"
+    },
+    {
+     "n": 7,
+     "date": "2026-02-26",
+     "status": "final"
+    },
+    {
+     "n": 8,
+     "date": "2026-03-05",
+     "status": "final"
+    },
+    {
+     "n": 9,
+     "date": "2026-03-12",
+     "status": "final"
+    },
+    {
+     "n": 10,
+     "date": "2026-03-19",
+     "status": "final"
+    },
+    {
+     "n": 11,
+     "date": "2026-03-26",
+     "status": "final"
+    },
+    {
+     "n": 12,
+     "date": "2026-04-02",
+     "status": "final"
+    },
+    {
+     "n": 13,
+     "date": "2026-04-09",
+     "status": "final"
+    },
+    {
+     "n": 14,
+     "date": "2026-04-16",
+     "status": "final"
+    },
+    {
+     "n": 15,
+     "date": "2026-04-23",
+     "status": "final"
+    },
+    {
+     "n": 16,
+     "date": "2026-04-30",
+     "status": "final"
+    }
+   ],
+   "players": [
+    {
+     "id": "cilteam6",
+     "payout": 0,
+     "scores": [
+      433.3,
+      628.6,
+      489.8,
+      442.4,
+      683.6,
+      505.6,
+      333.8,
+      274.9,
+      493.7,
+      392.3,
+      449.8,
+      425.3,
+      457.8,
+      522,
+      447,
+      455.3
+     ]
+    },
+    {
+     "id": "banzaitrey2",
+     "payout": 0,
+     "scores": [
+      468.2,
+      612.7,
+      383.4,
+      416.2,
+      580.7,
+      407.7,
+      459.4,
+      377.6,
+      361.4,
+      394.2,
+      492.9,
+      525.4,
+      454.8,
+      543.7,
+      423.7,
+      511.6
+     ]
+    },
+    {
+     "id": "acartledge",
+     "payout": 0,
+     "scores": [
+      472.8,
+      709.2,
+      511,
+      506.6,
+      638,
+      577.1,
+      410.2,
+      298.8,
+      314,
+      286.2,
+      419.6,
+      511.9,
+      354.5,
+      539.1,
+      445.8,
+      392.6
+     ]
+    },
+    {
+     "id": "walshbt",
+     "payout": 0,
+     "scores": [
+      433.4,
+      661.6,
+      480.2,
+      433.3,
+      606.6,
+      640.7,
+      486.6,
+      274.1,
+      472.6,
+      326.5,
+      427.3,
+      382.7,
+      388.6,
+      569.8,
+      343.9,
+      413.1
+     ]
+    },
+    {
+     "id": "goodgoodchamp",
+     "payout": 0,
+     "scores": [
+      447.9,
+      611.6,
+      505.4,
+      496.5,
+      597.9,
+      609.2,
+      426.7,
+      276,
+      352.7,
+      305.4,
+      365.2,
+      439.7,
+      312.5,
+      465.9,
+      546.1,
+      404.2
+     ]
+    },
+    {
+     "id": "rinorman",
+     "payout": 0,
+     "scores": [
+      315.3,
+      721.3,
+      507.9,
+      629.3,
+      601.4,
+      403.3,
+      364.4,
+      230.7,
+      377.9,
+      284.7,
+      537.2,
+      408.5,
+      432.1,
+      491.6,
+      406.9,
+      398.6
+     ]
+    },
+    {
+     "id": "crawtator",
+     "payout": 0,
+     "scores": [
+      433,
+      676.7,
+      397,
+      474.3,
+      566.5,
+      505.9,
+      420.2,
+      405.1,
+      250,
+      278.9,
+      399.7,
+      493,
+      491.5,
+      448.1,
+      420.9,
+      446.4
+     ]
+    },
+    {
+     "id": "bc32994",
+     "payout": 0,
+     "scores": [
+      307.5,
+      625,
+      544.8,
+      457.2,
+      688.7,
+      464.6,
+      461.2,
+      383.2,
+      404,
+      279,
+      331.7,
+      432.1,
+      315.6,
+      486.9,
+      468.5,
+      437.2
+     ]
+    },
+    {
+     "id": "chadt8",
+     "payout": 0,
+     "scores": [
+      307.7,
+      585.4,
+      406.6,
+      428.5,
+      669.7,
+      398,
+      424.5,
+      382.8,
+      338.4,
+      365.2,
+      541.8,
+      489.1,
+      263.3,
+      509.1,
+      468,
+      421.8
+     ]
+    },
+    {
+     "id": "hilyeri",
+     "payout": 0,
+     "scores": [
+      343.6,
+      619.8,
+      424.3,
+      473.3,
+      582.3,
+      433.6,
+      421.6,
+      285.9,
+      368.8,
+      373.8,
+      450.5,
+      394.2,
+      322.4,
+      496.2,
+      516.1,
+      462.1
+     ]
+    },
+    {
+     "id": "bjstout",
+     "payout": 0,
+     "scores": [
+      483.3,
+      655.6,
+      306.2,
+      411.9,
+      592,
+      477.6,
+      413.6,
+      243,
+      248.6,
+      358.2,
+      344.8,
+      428.9,
+      361.2,
+      419.8,
+      566.1,
+      447.5
+     ]
+    },
+    {
+     "id": "d_schmitt_3",
+     "payout": 0,
+     "scores": [
+      398.6,
+      750.3,
+      365.2,
+      438.9,
+      607.4,
+      598.2,
+      431.7,
+      410.1,
+      303.8,
+      341.1,
+      432.7,
+      389,
+      354.4,
+      440.3,
+      0,
+      351.3
+     ]
+    },
+    {
+     "id": "guslido",
+     "payout": 0,
+     "scores": [
+      298,
+      629.9,
+      315.9,
+      476.2,
+      600.3,
+      518.3,
+      375.1,
+      379.7,
+      200.6,
+      306.1,
+      517.6,
+      526.3,
+      331,
+      0,
+      552.4,
+      440
+     ]
+    },
+    {
+     "id": "tcl00007",
+     "payout": 0,
+     "scores": [
+      369.4,
+      590.7,
+      382.7,
+      0,
+      574.8,
+      511.9,
+      366.9,
+      350.5,
+      407.1,
+      284.7,
+      404.4,
+      431.5,
+      425.7,
+      509.1,
+      576.4,
+      0
+     ]
+    },
+    {
+     "id": "titsmcgeeee",
+     "payout": 0,
+     "scores": [
+      416.3,
+      0,
+      254,
+      470.5,
+      0,
+      382.1,
+      0,
+      0,
+      400.2,
+      296.6,
+      446.3,
+      404.6,
+      334.2,
+      541.1,
+      439.4,
+      451.3
+     ]
+    },
+    {
+     "id": "robert_swift",
+     "payout": 0,
+     "scores": [
+      445.9,
+      634,
+      0,
+      473.8,
+      0,
+      579.9,
+      0,
+      443,
+      201.4,
+      313.2,
+      514.3,
+      377.3,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "arm1121",
+     "payout": 0,
+     "scores": [
+      219.8,
+      513.6,
+      261.8,
+      415.6,
+      0,
+      464.7,
+      458,
+      482.3,
+      371.3,
+      176,
+      0,
+      0,
+      243.4,
+      0,
+      0,
+      0
+     ]
+    }
+   ],
+   "sideBets": []
+  }
+ ]
+}
