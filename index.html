@@ -3800,7 +3800,8 @@ const pts = n => n.toFixed(1);
    season - 17 men played 2026 H1, 13 played H2 - so players are per season and
    only names/Venmo/GroupMe ids are global. */
 let RAW = JSON.parse(document.getElementById('seed').textContent);
-let SOURCE = 'built-in';   // flips to 'files' once data/ loads; the footnote says which
+let SOURCE = 'built-in';   // becomes the list of data/ files that loaded
+let MISSING = [];          // the ones that did not - named in the footnote
 let D;
 function hydrate(id){
   const s = RAW.seasons.find(x => x.id === id) || RAW.seasons[0];
@@ -3883,8 +3884,23 @@ function renderStrip(){
    scores - who actually topped each contest - rather than read from a stored
    field, so it can't drift and it works for any season where we know the
    weekly prize but not who was paid. */
+/* Each season is totalled under the rule it was actually played by: Yahoo
+   dropped one, FanDuel could not drop at all. s.league.dropWorst carries that
+   per season, so History shows the standing the men actually finished in
+   rather than a recomputation under today's rule. */
 function seasonTotals(s){
   const n = s.league.contestCount, wp = s.league.weeklyPrize || 0;
+  const k = s.league.dropWorst || 0;
+  const tot = p => k ? p.scores.slice().sort((a,b)=>a-b).slice(k).reduce((a,b)=>a+b,0)
+                     : p.scores.reduce((a,b)=>a+b,0);
+  /* Contests that actually counted: weeks entered, less any dropped score that
+     was a real round. Dropping a 0 removes nothing, so it must not reduce the
+     count either - otherwise a man who missed a week would look more efficient
+     than one who played it badly. */
+  const counted = p => {
+    const dropped = k ? p.scores.slice().sort((a,b)=>a-b).slice(0, k) : [];
+    return p.scores.filter(x=>x>0).length - dropped.filter(x=>x>0).length;
+  };
   const wins = {}; s.players.forEach(p => wins[p.id] = 0);
   for (let c = 0; c < n; c++){
     const best = Math.max(...s.players.map(p => p.scores[c] || 0));
@@ -3895,8 +3911,9 @@ function seasonTotals(s){
   return s.players.map(p => ({
     id: p.id,
     display: (RAW.people[p.id]||{}).display || p.id,
-    total: p.scores.reduce((a,b)=>a+b,0),
+    total: tot(p),
     played: p.scores.filter(x=>x>0).length,
+    counted: counted(p),
     wins: wins[p.id],
     weekly: wins[p.id] * wp
   })).sort((a,b)=>b.total-a.total);
@@ -3977,9 +3994,11 @@ function renderHistory(){
       const key = who.person || p.id;
       const c = car[key] || (car[key] = {seasons:0, contests:0, points:0, money:0, ids:[], display:null});
       c.seasons++;
-      c.contests += p.scores.filter(x=>x>0).length;
-      c.points   += p.scores.reduce((a,b)=>a+b,0);
       const r = rows.findIndex(x => x.id === p.id);
+      // the season's official total and the contests behind it, both after
+      // whatever drop rule that season actually used
+      c.points   += rows[r] ? rows[r].total   : 0;
+      c.contests += rows[r] ? rows[r].counted : 0;
       c.money += (rows[r] ? rows[r].weekly : 0) + (prizes[r] || 0);
       if (!c.ids.includes(p.id)) c.ids.push(p.id);
       if (!c.display) c.display = who.display || p.id;
@@ -3999,8 +4018,9 @@ function renderHistory(){
     <div class="hist-head"><div><h3>Career</h3>
       <div class="hist-sub">One row per man across every season he played, Yahoo and FanDuel
       combined - the handles under each name are the usernames that record is built from.
-      Ranked by average, which is per contest entered, so it compares men who played
-      different numbers of weeks.</div></div></div>
+      Points are each season's official total, under the drop rule that season actually
+      used; Contests are the weeks behind that total, so a dropped round is out of both.
+      Ranked by average, which compares men who played different numbers of weeks.</div></div></div>
     <div class="scroll"><table>
       <thead><tr><th class="l" style="min-width:180px">Player</th><th class="num">Seasons</th>
         <th class="num">Contests</th><th class="num col-tot">Points</th><th class="num">Avg</th>
@@ -4362,10 +4382,12 @@ function renderAll(){
   setGroup('pay', pay); setGroup('scores', sc);
   fitColumns();
   const unconf = D.players.filter(p=>!p.identityConfirmed).length;
-  const src = SOURCE === 'files'
-    ? `Data: <code>data/</code>.`
-    : `Data: <strong>built-in copy</strong> &mdash; the files under <code>data/</code> could not be read, `
-      + `which is normal when this page is opened off disk rather than served. Scores may be out of date.`;
+  const src = SOURCE === 'built-in'
+    ? `Data: <strong>built-in copy</strong> &mdash; nothing under <code>data/</code> could be read, `
+      + `which is normal when this page is opened off disk rather than served. Scores may be out of date.`
+    : `Data: <code>data/</code> &mdash; ${SOURCE.join(', ')}.`
+      + (MISSING.length ? ` <strong>Not found: ${MISSING.join(', ')}</strong> `
+                        + `&mdash; using the copy built into this page for that part.` : '');
   $('#footnote').innerHTML = `${src} Showing <strong>${D.label}</strong>. `
     + (unconf ? `${unconf} player${unconf>1?'s have':' has'} no GroupMe/Venmo on file &mdash; side-bet settlement needs those.`
               : `All identities confirmed.`);
@@ -4486,34 +4508,58 @@ async function loadData(){
     get(SOURCES.seasons, 'json'),
     get(SOURCES.history, 'json')
   ]);
-  if (!seasonsDoc || !Array.isArray(seasonsDoc.seasons) || !seasonsDoc.seasons.length) return null;
+
+  /* Each file stands on its own. A missing one falls back to the inlined copy
+     for THAT slice only - an earlier version treated seasons.json as mandatory
+     and silently discarded roster.csv and history.json with it, so editing
+     those on GitHub changed nothing and nothing said so. */
+  const SEED = JSON.parse(document.getElementById('seed').textContent);
+  const loaded = [], missing = [];
+  const name = u => u.split('/').pop();
+
+  // Keyed by id, seeded with the inlined copy, then overlaid. Insertion order
+  // is the seed's (newest season first); a genuinely new id appends.
+  const byId = new Map(SEED.seasons.map(x => [x.id, x]));
+
+  if (seasonsDoc && Array.isArray(seasonsDoc.seasons) && seasonsDoc.seasons.length){
+    seasonsDoc.seasons.forEach(x => byId.set(x.id, x));
+    loaded.push(name(SOURCES.seasons));
+  } else missing.push(name(SOURCES.seasons));
 
   const history = Array.isArray(historyDoc) ? historyDoc
-                : (historyDoc && Array.isArray(historyDoc.seasons)) ? historyDoc.seasons : [];
+                : (historyDoc && Array.isArray(historyDoc.seasons)) ? historyDoc.seasons : null;
+  if (history && history.length){
+    history.forEach(x => byId.set(x.id, x));
+    loaded.push(name(SOURCES.history));
+  } else missing.push(name(SOURCES.history));
+
+  if (rosterTxt) loaded.push(name(SOURCES.roster)); else missing.push(name(SOURCES.roster));
 
   const raw = {
-    activeSeasonId: seasonsDoc.activeSeasonId,
-    groupmeId: seasonsDoc.groupmeId || null,
-    people: rosterTxt ? rosterFromCSV(rosterTxt) : (seasonsDoc.people || {}),
-    seasons: seasonsDoc.seasons.concat(history)
+    activeSeasonId: (seasonsDoc && seasonsDoc.activeSeasonId) || SEED.activeSeasonId,
+    groupmeId: (seasonsDoc && seasonsDoc.groupmeId) || SEED.groupmeId || null,
+    people: rosterTxt ? rosterFromCSV(rosterTxt) : SEED.people,
+    seasons: [...byId.values()]
   };
 
   for (const id of Object.keys(SOURCES.schedules || {})){
+    const url = SOURCES.schedules[id];
     const season = raw.seasons.find(x => x.id === id);
-    if (!season) continue;
-    const txt = await get(SOURCES.schedules[id], 'text');
-    if (txt) applySchedule(season, txt);
+    if (!season){ missing.push(name(url) + ' (no season ' + id + ')'); continue; }
+    const txt = await get(url, 'text');
+    if (txt){ applySchedule(season, txt); loaded.push(name(url)); } else missing.push(name(url));
   }
 
   if (!raw.seasons.find(x => x.id === raw.activeSeasonId)) raw.activeSeasonId = raw.seasons[0].id;
-  return raw;
+  raw.__loaded = loaded; raw.__missing = missing;
+  return loaded.length ? raw : null;
 }
 
 loadData()
   .then(raw => {
     if (!raw) return;                       // file:// open, or data/ not published yet
     RAW = raw;
-    SOURCE = 'files';
+    SOURCE = raw.__loaded; MISSING = raw.__missing;
     D = hydrate(RAW.activeSeasonId);
     renderAll();
   })
